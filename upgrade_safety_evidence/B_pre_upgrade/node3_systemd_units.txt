@@ -1,0 +1,14 @@
+ExecStart={ path=/usr/bin/kafka-server-start ; argv[]=/usr/bin/kafka-server-start /etc/kafka/server.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-server.service
+
+ExecStart={ path=/usr/bin/schema-registry-start ; argv[]=/usr/bin/schema-registry-start /etc/schema-registry/schema-registry.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-schema-registry.service
+
+ExecStart={ path=/usr/bin/connect-distributed ; argv[]=/usr/bin/connect-distributed /etc/kafka/connect-distributed.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-kafka-connect.service
+
+ExecStart={ path=/usr/bin/kafka-rest-start ; argv[]=/usr/bin/kafka-rest-start /etc/kafka-rest/kafka-rest.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-kafka-rest.service
+
+ExecStart={ path=/usr/bin/ksql-server-start ; argv[]=/usr/bin/ksql-server-start /etc/ksqldb/ksql-server.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-ksqldb.service

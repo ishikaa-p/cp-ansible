@@ -1,0 +1,5 @@
+33567405 1787095615.0028286160 /var/lib/zookeeper/myid
+41965131 1787095742.5651440450 /var/lib/zookeeper
+566963 1787096335.7796495650 /var/lib/zookeeper/version-2
+566964 1787095742.6951443670 /var/lib/zookeeper/version-2/snapshot.0
+566965 1787098228.8312945890 /var/lib/zookeeper/version-2/log.1

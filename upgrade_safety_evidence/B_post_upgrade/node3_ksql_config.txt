@@ -1,0 +1,2 @@
+ksql.streams.state.dir=/some/non-temporary-storage-path/
+ksql.streams.state.dir=/var/lib/kafka-streams

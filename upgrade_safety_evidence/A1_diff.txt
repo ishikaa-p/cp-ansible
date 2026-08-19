@@ -1,0 +1,8 @@
+10c10
+<     "deployment_group": "NEW_VAR_NOT_IN_BASELINE",
+---
+>     "deployment_group": "confluent",
+57c57
+<     "rootless_lifecycle_bin_dir": "NEW_VAR_NOT_IN_BASELINE",
+---
+>     "rootless_lifecycle_bin_dir": "/opt/confluent/rootless-bin",

@@ -1,0 +1,2 @@
+ExecStart={ path=/usr/bin/kafka-server-start ; argv[]=/usr/bin/kafka-server-start /etc/kafka/server.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-server.service

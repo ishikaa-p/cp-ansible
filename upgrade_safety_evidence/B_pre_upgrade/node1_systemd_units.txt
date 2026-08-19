@@ -1,0 +1,5 @@
+ExecStart={ path=/usr/bin/zookeeper-server-start ; argv[]=/usr/bin/zookeeper-server-start /etc/kafka/zookeeper.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-zookeeper.service
+
+ExecStart={ path=/usr/bin/control-center-start ; argv[]=/usr/bin/control-center-start /etc/confluent-control-center/control-center-production.properties ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+FragmentPath=/usr/lib/systemd/system/confluent-control-center.service

@@ -1,0 +1,3118 @@
+[WARNING]: Could not match supplied host pattern, ignoring: kafka_controller
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_connect_replicator
+
+PLAY [Validate Playbook Selection] *********************************************
+
+TASK [Fail if kraft_migration flag is enabled] *********************************
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.007)       0:00:00.007 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+PLAY [Host Prerequisites] ******************************************************
+
+TASK [Create Certificate Authority and Copy to Ansible Host] *******************
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.027)       0:00:00.034 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Confirm Hash Merging Enabled] ****************
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.019)       0:00:00.054 ****** 
+ok: [upgradenode1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [confluent.platform.common : Verify Ansible version] **********************
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.020)       0:00:00.075 ****** 
+ok: [upgradenode1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [confluent.platform.common : Check the presence of Controller and Zookeeper] ***
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.021)       0:00:00.096 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Gather OS Facts] *****************************
+Wednesday 19 August 2026  04:50:34 +0530 (0:00:00.021)       0:00:00.117 ****** 
+ok: [upgradenode1]
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Verify Python version] ***********************
+Wednesday 19 August 2026  04:50:49 +0530 (0:00:14.389)       0:00:14.506 ****** 
+ok: [upgradenode1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [confluent.platform.common : Red Hat Repo Setup and Java Installation] ****
+Wednesday 19 August 2026  04:50:49 +0530 (0:00:00.029)       0:00:14.536 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/redhat.yml for upgradenode1, upgradenode2, upgradenode3
+
+TASK [confluent.platform.common : Ensure Custom Repo file is not in repos when repository_configuration is Confluent] ***
+Wednesday 19 August 2026  04:50:49 +0530 (0:00:00.033)       0:00:14.570 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Add Confluent Repo file] *********************
+Wednesday 19 August 2026  04:50:54 +0530 (0:00:04.943)       0:00:19.513 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+changed: [upgradenode1]
+
+TASK [confluent.platform.common : Ensure Confluent Repo file is not in repos when repository_configuration is Custom] ***
+Wednesday 19 August 2026  04:51:23 +0530 (0:00:28.931)       0:00:48.444 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Add Custom Repo file] ************************
+Wednesday 19 August 2026  04:51:23 +0530 (0:00:00.029)       0:00:48.474 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : yum-clean-all] *******************************
+Wednesday 19 August 2026  04:51:23 +0530 (0:00:00.024)       0:00:48.499 ****** 
+ok: [upgradenode2]
+ok: [upgradenode1]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Custom Java Install] *************************
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:05.473)       0:00:53.972 ****** 
+[WARNING]: Collection community.general does not support Ansible version
+2.16.19
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/custom_java_install.yml for upgradenode1, upgradenode2, upgradenode3
+
+TASK [confluent.platform.common : Check custom_java_path in Centos7] ***********
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:00.060)       0:00:54.033 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check custom_java_path in Debian] ************
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:00.024)       0:00:54.057 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Java Update Alternatives] ********************
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:00.022)       0:00:54.080 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Keytool Update Alternatives] *****************
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:00.022)       0:00:54.102 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Install Java] ********************************
+Wednesday 19 August 2026  04:51:28 +0530 (0:00:00.024)       0:00:54.127 ****** 
+changed: [upgradenode1]
+changed: [upgradenode3]
+changed: [upgradenode2]
+
+TASK [confluent.platform.common : Install OpenSSL and Unzip] *******************
+Wednesday 19 August 2026  04:53:13 +0530 (0:01:44.881)       0:02:39.008 ****** 
+changed: [upgradenode2]
+changed: [upgradenode1]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Get Java Version] ****************************
+Wednesday 19 August 2026  04:53:22 +0530 (0:00:08.486)       0:02:47.495 ****** 
+ok: [upgradenode2]
+ok: [upgradenode1]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Print Java Version] **************************
+Wednesday 19 August 2026  04:53:26 +0530 (0:00:04.892)       0:02:52.387 ****** 
+ok: [upgradenode1] => {
+    "msg": "Current Java Version is: openjdk version \"17.0.20\" 2026-07-21 LTS"
+}
+ok: [upgradenode2] => {
+    "msg": "Current Java Version is: openjdk version \"17.0.20\" 2026-07-21 LTS"
+}
+ok: [upgradenode3] => {
+    "msg": "Current Java Version is: openjdk version \"17.0.20\" 2026-07-21 LTS"
+}
+
+TASK [confluent.platform.common : Install pip] *********************************
+Wednesday 19 August 2026  04:53:26 +0530 (0:00:00.026)       0:02:52.413 ****** 
+changed: [upgradenode1]
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Upgrade pip] *********************************
+Wednesday 19 August 2026  04:53:35 +0530 (0:00:08.776)       0:03:01.190 ****** 
+changed: [upgradenode1]
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Install pip packages] ************************
+Wednesday 19 August 2026  04:53:43 +0530 (0:00:07.399)       0:03:08.589 ****** 
+changed: [upgradenode2]
+changed: [upgradenode1]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Enable FIPS on rhel 8+] **********************
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:06.666)       0:03:15.256 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Ubuntu Repo Setup and Java Installation] *****
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.025)       0:03:15.281 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Debian Repo Setup and Java Installation] *****
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.019)       0:03:15.300 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Config Validations] **************************
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.019)       0:03:15.320 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/config_validations.yml for upgradenode1, upgradenode2, upgradenode3
+
+TASK [confluent.platform.common : Assert Confluent CLI version is compatible with secrets protection] ***
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.043)       0:03:15.363 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Retrieve SSL public key hash from private key on Local Host] ***
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.025)       0:03:15.389 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Register content of key file] ****************
+Wednesday 19 August 2026  04:53:49 +0530 (0:00:00.029)       0:03:15.419 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Retrieve SSL public key Hash from private key on Remote Host] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.025)       0:03:15.444 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Retrieve SSL public key hash from X509 certificate on Local Host] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.025)       0:03:15.469 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Register content of cert file] ***************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.028)       0:03:15.498 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Retrieve SSL public key hash from X509 certificate on Remote Host] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.025)       0:03:15.524 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : get public key hash from private key] ********
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.027)       0:03:15.551 ****** 
+ok: [upgradenode1]
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : get public key hash from X509 cert] **********
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.021)       0:03:15.573 ****** 
+ok: [upgradenode1]
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Assert SSL public key hash from private key matches public key hash from Cert] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.024)       0:03:15.598 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check the OS when using FIPS mode] ***********
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.029)       0:03:15.627 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check if FIPS is enabled on Local Host] ******
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.023)       0:03:15.651 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : assert] **************************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.022)       0:03:15.674 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check if FIPS is enabled on Remote Host] *****
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.023)       0:03:15.697 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : assert] **************************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.021)       0:03:15.718 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Create Confluent Platform install directory] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.020)       0:03:15.739 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Expand remote Confluent Platform archive] ****
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.021)       0:03:15.761 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Set Group and Owner for Confluent Platform archive] ***
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.017)       0:03:15.778 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Create Jolokia directory] ********************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.017)       0:03:15.796 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Copy Jolokia Jar] ****************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.026)       0:03:15.823 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Download Jolokia Jar] ************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.026)       0:03:15.850 ****** 
+skipping: [upgradenode1] => (item=control_center) 
+skipping: [upgradenode1] => (item=zookeeper) 
+skipping: [upgradenode1]
+skipping: [upgradenode2] => (item=kafka_broker) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Create Prometheus install directory] *********
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.028)       0:03:15.878 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Copy Prometheus Jar] *************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.023)       0:03:15.901 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Download Prometheus JMX Exporter Jar] ********
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.022)       0:03:15.924 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Install Confluent CLI] ***********************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.021)       0:03:15.946 ****** 
+skipping: [upgradenode1]
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : set_fact] ************************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.021)       0:03:15.968 ****** 
+ok: [upgradenode1]
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+PLAY [Zookeeper Status Finding] ************************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  04:53:50 +0530 (0:00:00.025)       0:03:15.993 ****** 
+ok: [upgradenode1]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  04:53:58 +0530 (0:00:07.443)       0:03:23.436 ****** 
+ok: [upgradenode1]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  04:53:58 +0530 (0:00:00.022)       0:03:23.459 ****** 
+ok: [upgradenode1]
+
+PLAY [Zookeeper Parallel Provisioning] *****************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  04:53:58 +0530 (0:00:00.016)       0:03:23.475 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Gather OS Facts] **************************
+Wednesday 19 August 2026  04:53:58 +0530 (0:00:00.012)       0:03:23.487 ****** 
+ok: [upgradenode1] => (item=ansible_os_family)
+ok: [upgradenode1] => (item=ansible_fqdn)
+
+TASK [confluent.platform.zookeeper : Validate Zookeeper Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  04:54:09 +0530 (0:00:11.510)       0:03:34.998 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode1
+
+TASK [confluent.platform.zookeeper : Check if Custom Jolokia Access Control File Exists - Zookeeper] ***
+Wednesday 19 August 2026  04:54:09 +0530 (0:00:00.023)       0:03:35.021 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Fail if Custom Jolokia Access Control File Path is not set - Zookeeper] ***
+Wednesday 19 August 2026  04:54:09 +0530 (0:00:00.014)       0:03:35.035 ****** 
+skipping: [upgradenode1]
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  04:54:09 +0530 (0:00:00.012)       0:03:35.048 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  04:54:09 +0530 (0:00:00.035)       0:03:35.083 ****** 
+ok: [upgradenode1] => (item=confluent-common)
+ok: [upgradenode1] => (item=confluent-rest-utils)
+ok: [upgradenode1] => (item=confluent-metadata-service)
+ok: [upgradenode1] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode1] => (item=confluent-kafka-rest)
+ok: [upgradenode1] => (item=confluent-server-rest)
+ok: [upgradenode1] => (item=confluent-telemetry)
+ok: [upgradenode1] => (item=confluent-server)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  04:55:04 +0530 (0:00:54.455)       0:04:29.539 ****** 
+skipping: [upgradenode1] => (item=confluent-common) 
+skipping: [upgradenode1] => (item=confluent-rest-utils) 
+skipping: [upgradenode1] => (item=confluent-metadata-service) 
+skipping: [upgradenode1] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode1] => (item=confluent-kafka-rest) 
+skipping: [upgradenode1] => (item=confluent-server-rest) 
+skipping: [upgradenode1] => (item=confluent-telemetry) 
+skipping: [upgradenode1] => (item=confluent-server) 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  04:55:04 +0530 (0:00:00.021)       0:04:29.560 ****** 
+skipping: [upgradenode1]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  04:55:04 +0530 (0:00:00.020)       0:04:29.581 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  04:55:04 +0530 (0:00:00.036)       0:04:29.618 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  04:55:10 +0530 (0:00:06.276)       0:04:35.894 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  04:55:10 +0530 (0:00:00.019)       0:04:35.914 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  04:55:10 +0530 (0:00:00.022)       0:04:35.937 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  04:55:10 +0530 (0:00:00.039)       0:04:35.976 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  04:55:10 +0530 (0:00:00.017)       0:04:35.993 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  04:55:17 +0530 (0:00:06.843)       0:04:42.837 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  04:55:17 +0530 (0:00:00.023)       0:04:42.860 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  04:55:17 +0530 (0:00:00.019)       0:04:42.879 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Install the Zookeeper Packages] ***********
+Wednesday 19 August 2026  04:55:17 +0530 (0:00:00.020)       0:04:42.900 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Install the Zookeeper Packages] ***********
+Wednesday 19 August 2026  04:56:18 +0530 (0:01:00.914)       0:05:43.814 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper Group] *******************
+Wednesday 19 August 2026  04:56:18 +0530 (0:00:00.017)       0:05:43.832 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Check if Zookeeper User Exists] ***********
+Wednesday 19 August 2026  04:56:23 +0530 (0:00:04.734)       0:05:48.566 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper User] ********************
+Wednesday 19 August 2026  04:56:27 +0530 (0:00:04.793)       0:05:53.360 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Copy Zookeeper Service from archive file to system] ***
+Wednesday 19 August 2026  04:56:27 +0530 (0:00:00.030)       0:05:53.390 ****** 
+skipping: [upgradenode1]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  04:56:27 +0530 (0:00:00.014)       0:05:53.405 ****** 
+skipping: [upgradenode1]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  04:56:28 +0530 (0:00:00.017)       0:05:53.422 ****** 
+skipping: [upgradenode1]
+
+TASK [Copy Custom Zookeeper Files] *********************************************
+Wednesday 19 August 2026  04:56:28 +0530 (0:00:00.040)       0:05:53.463 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Set Zookeeper Data Dir Ownership] *********
+Wednesday 19 August 2026  04:56:28 +0530 (0:00:00.019)       0:05:53.482 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Set Ownership of Data Dir Files] **********
+Wednesday 19 August 2026  04:56:32 +0530 (0:00:04.813)       0:05:58.296 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Set Zookeeper Transaction Log Data Dir Ownership] ***
+Wednesday 19 August 2026  04:56:37 +0530 (0:00:05.038)       0:06:03.334 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Set Ownership of Transaction Log Data Dir Files] ***
+Wednesday 19 August 2026  04:56:37 +0530 (0:00:00.043)       0:06:03.378 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper myid File] ***************
+Wednesday 19 August 2026  04:56:37 +0530 (0:00:00.041)       0:06:03.420 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper Config directory] ********
+Wednesday 19 August 2026  04:57:07 +0530 (0:00:29.871)       0:06:33.291 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper Config] ******************
+Wednesday 19 August 2026  04:57:12 +0530 (0:00:04.877)       0:06:38.169 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Log Directory] *********************
+Wednesday 19 August 2026  04:57:42 +0530 (0:00:29.254)       0:07:07.424 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create log4j Directory] *******************
+Wednesday 19 August 2026  04:57:47 +0530 (0:00:04.998)       0:07:12.422 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper log4j config] ************
+Wednesday 19 August 2026  04:57:52 +0530 (0:00:05.051)       0:07:17.474 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:29.315)       0:07:46.790 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.020)       0:07:46.810 ****** 
+skipping: [upgradenode1]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.017)       0:07:46.828 ****** 
+skipping: [upgradenode1] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'zkAppender'}) 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Restart zookeeper] ************************
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.020)       0:07:46.849 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Copy Zookeeper Jolokia Access Control File] ***
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.018)       0:07:46.867 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper Jolokia Config] **********
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.043)       0:07:46.911 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Zookeeper Jaas config] *************
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.017)       0:07:46.929 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Deploy JMX Exporter Config File] **********
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.018)       0:07:46.947 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Create Service Override Directory] ********
+Wednesday 19 August 2026  04:58:21 +0530 (0:00:00.017)       0:07:46.965 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Write Service Overrides] ******************
+Wednesday 19 August 2026  04:58:26 +0530 (0:00:04.947)       0:07:51.912 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Certs were Updated - Trigger Restart] *****
+Wednesday 19 August 2026  04:58:55 +0530 (0:00:29.474)       0:08:21.387 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : meta] *************************************
+Wednesday 19 August 2026  04:58:55 +0530 (0:00:00.020)       0:08:21.407 ****** 
+
+RUNNING HANDLER [confluent.platform.zookeeper : restart zookeeper] *************
+Wednesday 19 August 2026  04:58:55 +0530 (0:00:00.006)       0:08:21.414 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/zookeeper/tasks/restart_and_wait.yml for upgradenode1
+
+RUNNING HANDLER [confluent.platform.zookeeper : Restart Zookeeper] *************
+Wednesday 19 August 2026  04:58:56 +0530 (0:00:00.025)       0:08:21.440 ****** 
+changed: [upgradenode1]
+
+RUNNING HANDLER [confluent.platform.zookeeper : Startup Delay] *****************
+Wednesday 19 August 2026  04:59:01 +0530 (0:00:05.722)       0:08:27.162 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Zookeeper Service Started] ****************
+Wednesday 19 August 2026  04:59:11 +0530 (0:00:09.730)       0:08:36.892 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Zookeeper Health Check] *******************
+Wednesday 19 August 2026  04:59:16 +0530 (0:00:05.246)       0:08:42.139 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/zookeeper/tasks/health_check.yml for upgradenode1
+
+TASK [confluent.platform.zookeeper : Wait for Zookeeper Status] ****************
+Wednesday 19 August 2026  04:59:16 +0530 (0:00:00.035)       0:08:42.175 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Wait for Zookeeper Quorum] ****************
+Wednesday 19 August 2026  04:59:22 +0530 (0:00:05.873)       0:08:48.048 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Fetch Files for Debugging Failure] ********
+Wednesday 19 August 2026  04:59:28 +0530 (0:00:05.888)       0:08:53.937 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Fail Provisioning] ************************
+Wednesday 19 August 2026  04:59:28 +0530 (0:00:00.018)       0:08:53.955 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.zookeeper : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  04:59:28 +0530 (0:00:00.015)       0:08:53.971 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring: zookeeper_serial
+[WARNING]: Could not match supplied host pattern, ignoring: zookeeper_follower
+[WARNING]: Could not match supplied host pattern, ignoring: zookeeper_leader
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_controller_parallel
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_controller_serial
+skipping: [upgradenode1] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode1] => (item=/var/ssl/private/zookeeper.crt) 
+skipping: [upgradenode1] => (item=/var/ssl/private/zookeeper.key) 
+skipping: [upgradenode1]
+
+PLAY [Zookeeper Serial Ordering] ***********************************************
+skipping: no hosts matched
+
+PLAY [Zookeeper Followers Provisioning] ****************************************
+skipping: no hosts matched
+
+PLAY [Zookeeper Leader Provisioning] *******************************************
+skipping: no hosts matched
+
+PLAY [Kafka Controller Status Finding] *****************************************
+skipping: no hosts matched
+
+PLAY [Kafka Controller Parallel Provisioning] **********************************
+skipping: no hosts matched
+
+PLAY [Kafka Controller Serial Provisioning] ************************************
+skipping: no hosts matched
+
+PLAY [Kafka Broker Status Finding] *********************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  04:59:28 +0530 (0:00:00.029)       0:08:54.000 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  04:59:36 +0530 (0:00:08.015)       0:09:02.016 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  04:59:36 +0530 (0:00:00.027)       0:09:02.043 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+PLAY [Kafka Broker Parallel Provisioning] **************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  04:59:36 +0530 (0:00:00.027)       0:09:02.070 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Gather OS Facts] ***********************
+Wednesday 19 August 2026  04:59:36 +0530 (0:00:00.021)       0:09:02.092 ****** 
+ok: [upgradenode3] => (item=ansible_os_family)
+ok: [upgradenode2] => (item=ansible_os_family)
+ok: [upgradenode3] => (item=ansible_fqdn)
+ok: [upgradenode2] => (item=ansible_fqdn)
+ok: [upgradenode2] => (item=ansible_distribution)
+ok: [upgradenode3] => (item=ansible_distribution)
+
+TASK [confluent.platform.kafka_broker : Validate cert principals defined in inventory for RBAC mTLS setup] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:15.449)       0:09:17.542 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Assert that datadir is not present in the inventory] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.021)       0:09:17.563 ****** 
+ok: [upgradenode2] => (item=upgradenode2) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "upgradenode2",
+    "msg": "All assertions passed"
+}
+ok: [upgradenode2] => (item=upgradenode3) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "upgradenode3",
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => (item=upgradenode2) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "upgradenode2",
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => (item=upgradenode3) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "upgradenode3",
+    "msg": "All assertions passed"
+}
+
+TASK [confluent.platform.kafka_broker : Validate Kafka Broker Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.025)       0:09:17.588 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode2, upgradenode3
+
+TASK [confluent.platform.kafka_broker : Check if Custom Jolokia Access Control File Exists - Kafka Broker] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.029)       0:09:17.618 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Fail if Custom Jolokia Access Control File Path is not set - Kafka Broker] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.022)       0:09:17.641 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Assert log.dirs Property not Misconfigured] ***
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.019)       0:09:17.660 ****** 
+ok: [upgradenode2] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+ok: [upgradenode3] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.284)       0:09:17.944 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  04:59:52 +0530 (0:00:00.054)       0:09:17.999 ****** 
+ok: [upgradenode3] => (item=confluent-common)
+ok: [upgradenode2] => (item=confluent-common)
+ok: [upgradenode2] => (item=confluent-rest-utils)
+ok: [upgradenode3] => (item=confluent-rest-utils)
+ok: [upgradenode2] => (item=confluent-metadata-service)
+ok: [upgradenode3] => (item=confluent-metadata-service)
+ok: [upgradenode2] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode3] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode2] => (item=confluent-kafka-rest)
+ok: [upgradenode3] => (item=confluent-kafka-rest)
+ok: [upgradenode2] => (item=confluent-server-rest)
+ok: [upgradenode3] => (item=confluent-server-rest)
+ok: [upgradenode2] => (item=confluent-telemetry)
+ok: [upgradenode3] => (item=confluent-telemetry)
+ok: [upgradenode2] => (item=confluent-server)
+ok: [upgradenode3] => (item=confluent-server)
+ok: [upgradenode2] => (item=confluent-rebalancer)
+ok: [upgradenode3] => (item=confluent-rebalancer)
+ok: [upgradenode2] => (item=confluent-security)
+ok: [upgradenode3] => (item=confluent-security)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:01:00 +0530 (0:01:08.316)       0:10:26.316 ****** 
+skipping: [upgradenode2] => (item=confluent-common) 
+skipping: [upgradenode2] => (item=confluent-rest-utils) 
+skipping: [upgradenode2] => (item=confluent-metadata-service) 
+skipping: [upgradenode2] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode3] => (item=confluent-common) 
+skipping: [upgradenode2] => (item=confluent-kafka-rest) 
+skipping: [upgradenode2] => (item=confluent-server-rest) 
+skipping: [upgradenode3] => (item=confluent-rest-utils) 
+skipping: [upgradenode2] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-metadata-service) 
+skipping: [upgradenode2] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode2] => (item=confluent-rebalancer) 
+skipping: [upgradenode3] => (item=confluent-kafka-rest) 
+skipping: [upgradenode2] => (item=confluent-security) 
+skipping: [upgradenode3] => (item=confluent-server-rest) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-rebalancer) 
+skipping: [upgradenode3] => (item=confluent-security) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:01:00 +0530 (0:00:00.029)       0:10:26.346 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:01:00 +0530 (0:00:00.029)       0:10:26.376 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:01:01 +0530 (0:00:00.058)       0:10:26.434 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:01:07 +0530 (0:00:06.196)       0:10:32.631 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:01:07 +0530 (0:00:00.038)       0:10:32.669 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:01:07 +0530 (0:00:00.043)       0:10:32.712 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:01:07 +0530 (0:00:00.036)       0:10:32.749 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:01:07 +0530 (0:00:00.035)       0:10:32.785 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:01:14 +0530 (0:00:07.044)       0:10:39.829 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:01:14 +0530 (0:00:00.037)       0:10:39.867 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:01:14 +0530 (0:00:00.033)       0:10:39.900 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Install the Kafka Broker Packages] *****
+Wednesday 19 August 2026  05:01:14 +0530 (0:00:00.042)       0:10:39.942 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Install the Kafka Broker Packages] *****
+Wednesday 19 August 2026  05:03:42 +0530 (0:02:27.802)       0:13:07.745 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Kafka Broker group] ********************
+Wednesday 19 August 2026  05:03:42 +0530 (0:00:00.030)       0:13:07.775 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Check if Kafka Broker User Exists] *****
+Wednesday 19 August 2026  05:03:46 +0530 (0:00:04.634)       0:13:12.409 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker user] **************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:04.620)       0:13:17.030 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Copy Kafka Broker Service from archive file to system] ***
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.107)       0:13:17.138 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.024)       0:13:17.162 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : include_tasks] *************************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.046)       0:13:17.209 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [Import IDP certificate to MDS Truststore for C3 SSO] *********************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.027)       0:13:17.236 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.023)       0:13:17.260 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [Copy Custom Kafka Files] *************************************************
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.033)       0:13:17.293 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Set Permissions on /var/lib/kafka] *****
+Wednesday 19 August 2026  05:03:51 +0530 (0:00:00.026)       0:13:17.320 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Config directory] ***
+Wednesday 19 August 2026  05:03:56 +0530 (0:00:04.535)       0:13:21.855 ****** 
+changed: [upgradenode3]
+changed: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Config] ************
+Wednesday 19 August 2026  05:04:01 +0530 (0:00:05.238)       0:13:27.093 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Client Config] *****
+Wednesday 19 August 2026  05:04:30 +0530 (0:00:28.750)       0:13:55.844 ****** 
+changed: [upgradenode3]
+changed: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Create Service Override Directory] *****
+Wednesday 19 August 2026  05:04:58 +0530 (0:00:28.551)       0:14:24.395 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Encrypt broker secrets] ****************
+Wednesday 19 August 2026  05:05:04 +0530 (0:00:05.322)       0:14:29.718 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Write Service Overrides] ***************
+Wednesday 19 August 2026  05:05:04 +0530 (0:00:00.032)       0:14:29.750 ****** 
+changed: [upgradenode3]
+changed: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Include Kraft Cluster Data] ************
+Wednesday 19 August 2026  05:05:32 +0530 (0:00:28.597)       0:14:58.347 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Zookeeper TLS Client Config] ****
+Wednesday 19 August 2026  05:05:32 +0530 (0:00:00.030)       0:14:58.378 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Logs Directory] *****************
+Wednesday 19 August 2026  05:05:32 +0530 (0:00:00.030)       0:14:58.408 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Set Permissions on Data Dirs] **********
+Wednesday 19 August 2026  05:05:37 +0530 (0:00:04.714)       0:15:03.123 ****** 
+changed: [upgradenode2] => (item=/var/lib/kafka/data)
+changed: [upgradenode3] => (item=/var/lib/kafka/data)
+
+TASK [confluent.platform.kafka_broker : Check Green/Brownfield setup] **********
+Wednesday 19 August 2026  05:05:42 +0530 (0:00:05.128)       0:15:08.251 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Set Permissions on Data Dir files] *****
+Wednesday 19 August 2026  05:05:42 +0530 (0:00:00.040)       0:15:08.291 ****** 
+ok: [upgradenode2] => (item=/var/lib/kafka/data)
+ok: [upgradenode3] => (item=/var/lib/kafka/data)
+
+TASK [Update Kafka log4j Config for Log Cleanup] *******************************
+Wednesday 19 August 2026  05:05:47 +0530 (0:00:05.015)       0:15:13.306 ****** 
+
+TASK [confluent.platform.common : Replace rootLogger] **************************
+Wednesday 19 August 2026  05:05:47 +0530 (0:00:00.093)       0:15:13.400 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+
+TASK [confluent.platform.common : Replace loggers] *****************************
+Wednesday 19 August 2026  05:05:52 +0530 (0:00:04.815)       0:15:18.215 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Replace DailyRollingFileAppender with RollingFileAppender] ***
+Wednesday 19 August 2026  05:05:52 +0530 (0:00:00.025)       0:15:18.241 ****** 
+[WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created
+with a mode of 0700, this may cause issues when running as another user. To
+avoid this, create the remote_tmp dir with the correct permissions manually
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Key log4j.appender.X.DatePattern] *****
+Wednesday 19 August 2026  05:05:57 +0530 (0:00:04.689)       0:15:22.930 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Register Appenders] **************************
+Wednesday 19 August 2026  05:06:02 +0530 (0:00:04.580)       0:15:27.511 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Add Max Size Properties] *********************
+Wednesday 19 August 2026  05:06:06 +0530 (0:00:04.641)       0:15:32.153 ****** 
+changed: [upgradenode2] => (item=['kafkaAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['kafkaAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['kafkaAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['kafkaAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['kafkaAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['kafkaAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['stateChangeAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['stateChangeAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['stateChangeAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['stateChangeAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['stateChangeAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['stateChangeAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['requestAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['requestAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['requestAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['requestAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['requestAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['requestAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['cleanerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['cleanerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['cleanerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['cleanerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['cleanerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['cleanerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['controllerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['controllerAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['controllerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['controllerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['controllerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['controllerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['authorizerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['authorizerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['authorizerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['authorizerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['authorizerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['authorizerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['metadataServiceAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['metadataServiceAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['metadataServiceAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['metadataServiceAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['metadataServiceAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['metadataServiceAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['auditLogAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['auditLogAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['auditLogAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['auditLogAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['auditLogAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['auditLogAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['dataBalancerAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['dataBalancerAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['dataBalancerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['dataBalancerAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['dataBalancerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['dataBalancerAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode3] => (item=['zkAuditAppender', 'Append=true'])
+changed: [upgradenode2] => (item=['zkAuditAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['zkAuditAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode2] => (item=['zkAuditAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['zkAuditAppender', 'MaxFileSize=100MB'])
+changed: [upgradenode2] => (item=['zkAuditAppender', 'MaxFileSize=100MB'])
+
+TASK [confluent.platform.kafka_broker : Set Permissions on Log4j Conf] *********
+Wednesday 19 August 2026  05:08:24 +0530 (0:02:17.748)       0:17:49.902 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:04.662)       0:17:54.564 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.071)       0:17:54.636 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.030)       0:17:54.667 ****** 
+skipping: [upgradenode2] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'kafkaAppender'}) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'kafkaAppender'}) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Restart kafka broker] ******************
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.032)       0:17:54.699 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Copy Jolokia Access Control File] ******
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.032)       0:17:54.731 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Jolokia Config] ****
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.031)       0:17:54.763 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Jaas Config] *******
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.030)       0:17:54.794 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Kafka Broker Password File] *****
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.036)       0:17:54.831 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create Zookeeper chroot] ***************
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.031)       0:17:54.862 ****** 
+skipping: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Create SCRAM Users] ********************
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.019)       0:17:54.881 ****** 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Create SCRAM 256 Users] ****************
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.087)       0:17:54.968 ****** 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2] => (item=None) 
+skipping: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Deploy JMX Exporter Config File] *******
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.052)       0:17:55.020 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create sysctl directory on Debian distributions] ***
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.032)       0:17:55.053 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Tune virtual memory settings] **********
+Wednesday 19 August 2026  05:08:29 +0530 (0:00:00.027)       0:17:55.080 ****** 
+changed: [upgradenode2] => (item={'key': 'vm.swappiness', 'value': 1})
+changed: [upgradenode3] => (item={'key': 'vm.swappiness', 'value': 1})
+changed: [upgradenode2] => (item={'key': 'vm.dirty_background_ratio', 'value': 5})
+changed: [upgradenode3] => (item={'key': 'vm.dirty_background_ratio', 'value': 5})
+changed: [upgradenode3] => (item={'key': 'vm.dirty_ratio', 'value': 80})
+changed: [upgradenode2] => (item={'key': 'vm.dirty_ratio', 'value': 80})
+changed: [upgradenode2] => (item={'key': 'vm.max_map_count', 'value': 262144})
+changed: [upgradenode3] => (item={'key': 'vm.max_map_count', 'value': 262144})
+
+TASK [confluent.platform.kafka_broker : Certs were Updated - Trigger Restart] ***
+Wednesday 19 August 2026  05:08:48 +0530 (0:00:18.653)       0:18:13.733 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : meta] **********************************
+Wednesday 19 August 2026  05:08:48 +0530 (0:00:00.030)       0:18:13.763 ****** 
+
+TASK [confluent.platform.kafka_broker : meta] **********************************
+Wednesday 19 August 2026  05:08:48 +0530 (0:00:00.006)       0:18:13.770 ****** 
+
+RUNNING HANDLER [confluent.platform.kafka_broker : restart kafka] **************
+Wednesday 19 August 2026  05:08:48 +0530 (0:00:00.006)       0:18:13.777 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_broker/tasks/restart_and_wait.yml for upgradenode2, upgradenode3
+
+RUNNING HANDLER [confluent.platform.kafka_broker : Restart Kafka] **************
+Wednesday 19 August 2026  05:08:48 +0530 (0:00:00.044)       0:18:13.822 ****** 
+changed: [upgradenode3]
+changed: [upgradenode2]
+
+RUNNING HANDLER [confluent.platform.kafka_broker : Startup Delay] **************
+Wednesday 19 August 2026  05:08:53 +0530 (0:00:05.390)       0:18:19.212 ****** 
+ok: [upgradenode3]
+ok: [upgradenode2]
+
+TASK [confluent.platform.kafka_broker : Kafka Started] *************************
+Wednesday 19 August 2026  05:09:18 +0530 (0:00:25.026)       0:18:44.238 ****** 
+changed: [upgradenode2]
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Wait for Broker health checks to complete] ***
+Wednesday 19 August 2026  05:09:24 +0530 (0:00:05.399)       0:18:49.638 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_broker/tasks/health_check.yml for upgradenode2, upgradenode3
+
+TASK [confluent.platform.kafka_broker : Get Topics with UnderReplicatedPartitions] ***
+Wednesday 19 August 2026  05:09:24 +0530 (0:00:00.072)       0:18:49.711 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [Get existing master key from override.conf] ******************************
+Wednesday 19 August 2026  05:09:31 +0530 (0:00:07.122)       0:18:56.834 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Get Topics with UnderReplicatedPartitions with Secrets Protection enabled] ***
+Wednesday 19 August 2026  05:09:31 +0530 (0:00:00.037)       0:18:56.871 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Wait for Metadata Service to start] ****
+Wednesday 19 August 2026  05:09:31 +0530 (0:00:00.035)       0:18:56.907 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Wait for Embedded Rest Proxy to start] ***
+Wednesday 19 August 2026  05:09:31 +0530 (0:00:00.030)       0:18:56.937 ****** 
+ok: [upgradenode2]
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Fetch Files for Debugging Failure] *****
+Wednesday 19 August 2026  05:09:46 +0530 (0:00:15.336)       0:19:12.273 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Fail Provisioning] *********************
+Wednesday 19 August 2026  05:09:46 +0530 (0:00:00.037)       0:19:12.311 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Register Cluster] **********************
+Wednesday 19 August 2026  05:09:46 +0530 (0:00:00.030)       0:19:12.341 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Create RBAC Rolebindings] **************
+Wednesday 19 August 2026  05:09:46 +0530 (0:00:00.028)       0:19:12.370 ****** 
+skipping: [upgradenode2]
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_broker : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  05:09:46 +0530 (0:00:00.027)       0:19:12.398 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring: kafka_broker_serial
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_broker_non_controller
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_broker_controller
+skipping: [upgradenode2] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode2] => (item=/var/ssl/private/kafka_broker.crt) 
+skipping: [upgradenode2] => (item=/var/ssl/private/kafka_broker.key) 
+skipping: [upgradenode2]
+skipping: [upgradenode3] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_broker.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_broker.key) 
+skipping: [upgradenode3]
+
+PLAY [Kafka Broker Serial Provisioning] ****************************************
+skipping: no hosts matched
+
+PLAY [Kafka Broker Serial Ordering] ********************************************
+skipping: no hosts matched
+
+PLAY [Kafka Broker Non Controllers Provisioning] *******************************
+skipping: no hosts matched
+
+PLAY [Kafka Broker Controller Provisioning] ************************************
+skipping: no hosts matched
+
+PLAY [Schema Registry Provisioning] ********************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  05:09:47 +0530 (0:00:00.053)       0:19:12.452 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Gather OS Facts] ********************
+Wednesday 19 August 2026  05:09:47 +0530 (0:00:00.016)       0:19:12.468 ****** 
+ok: [upgradenode3] => (item=ansible_os_family)
+ok: [upgradenode3] => (item=ansible_fqdn)
+
+TASK [confluent.platform.schema_registry : Validate Schema Registry Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  05:09:57 +0530 (0:00:09.997)       0:19:22.466 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode3
+
+TASK [confluent.platform.schema_registry : Check if Custom Jolokia Access Control File Exists - Schema Registry] ***
+Wednesday 19 August 2026  05:09:57 +0530 (0:00:00.076)       0:19:22.543 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Fail if Custom Jolokia Access Control File Path is not set - Schema Registry] ***
+Wednesday 19 August 2026  05:09:57 +0530 (0:00:00.020)       0:19:22.564 ****** 
+skipping: [upgradenode3]
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  05:09:57 +0530 (0:00:00.020)       0:19:22.584 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  05:09:57 +0530 (0:00:00.051)       0:19:22.635 ****** 
+ok: [upgradenode3] => (item=confluent-common)
+ok: [upgradenode3] => (item=confluent-rest-utils)
+ok: [upgradenode3] => (item=confluent-metadata-service)
+ok: [upgradenode3] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode3] => (item=confluent-kafka-rest)
+ok: [upgradenode3] => (item=confluent-server-rest)
+ok: [upgradenode3] => (item=confluent-telemetry)
+ok: [upgradenode3] => (item=confluent-server)
+ok: [upgradenode3] => (item=confluent-schema-registry)
+ok: [upgradenode3] => (item=confluent-security)
+ok: [upgradenode3] => (item=confluent-schema-registry-plugins)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:11:11 +0530 (0:01:14.322)       0:20:36.958 ****** 
+skipping: [upgradenode3] => (item=confluent-common) 
+skipping: [upgradenode3] => (item=confluent-rest-utils) 
+skipping: [upgradenode3] => (item=confluent-metadata-service) 
+skipping: [upgradenode3] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode3] => (item=confluent-kafka-rest) 
+skipping: [upgradenode3] => (item=confluent-server-rest) 
+skipping: [upgradenode3] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-schema-registry) 
+skipping: [upgradenode3] => (item=confluent-security) 
+skipping: [upgradenode3] => (item=confluent-schema-registry-plugins) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:11:11 +0530 (0:00:00.031)       0:20:36.989 ****** 
+skipping: [upgradenode3]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:11:11 +0530 (0:00:00.032)       0:20:37.021 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:11:11 +0530 (0:00:00.052)       0:20:37.073 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:11:18 +0530 (0:00:06.407)       0:20:43.480 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:11:18 +0530 (0:00:00.021)       0:20:43.502 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:11:18 +0530 (0:00:00.026)       0:20:43.529 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:11:18 +0530 (0:00:00.020)       0:20:43.549 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:11:18 +0530 (0:00:00.018)       0:20:43.567 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:11:25 +0530 (0:00:07.175)       0:20:50.743 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:11:25 +0530 (0:00:00.020)       0:20:50.764 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:11:25 +0530 (0:00:00.019)       0:20:50.784 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Install the Schema Registry Packages] ***
+Wednesday 19 August 2026  05:11:25 +0530 (0:00:00.022)       0:20:50.806 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Install the Schema Registry Packages] ***
+Wednesday 19 August 2026  05:11:59 +0530 (0:00:34.425)       0:21:25.232 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Schema Registry Group] **************
+Wednesday 19 August 2026  05:11:59 +0530 (0:00:00.018)       0:21:25.250 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Check if Schema Registry User Exists] ***
+Wednesday 19 August 2026  05:12:04 +0530 (0:00:04.611)       0:21:29.862 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Schema Registry User] ********
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:04.588)       0:21:34.450 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Copy Schema Registry Service from archive file to system] ***
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.026)       0:21:34.477 ****** 
+skipping: [upgradenode3]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.015)       0:21:34.492 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.039)       0:21:34.531 ****** 
+skipping: [upgradenode3]
+
+TASK [Copy Custom Schema Registry Files] ***************************************
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.022)       0:21:34.553 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Configure RBAC] *********************
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.017)       0:21:34.570 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Schema Registry Config directory] ***
+Wednesday 19 August 2026  05:12:09 +0530 (0:00:00.018)       0:21:34.588 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Schema Registry Config] ******
+Wednesday 19 August 2026  05:12:13 +0530 (0:00:04.591)       0:21:39.180 ****** 
+changed: [upgradenode3]
+
+TASK [Create Schema Registry Config with Secrets Protection] *******************
+Wednesday 19 August 2026  05:12:41 +0530 (0:00:28.169)       0:22:07.349 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Logs Directory] **************
+Wednesday 19 August 2026  05:12:41 +0530 (0:00:00.022)       0:22:07.371 ****** 
+changed: [upgradenode3]
+
+TASK [Update log4j Config for Log Cleanup] *************************************
+Wednesday 19 August 2026  05:12:46 +0530 (0:00:04.639)       0:22:12.011 ****** 
+
+TASK [confluent.platform.common : Replace rootLogger] **************************
+Wednesday 19 August 2026  05:12:46 +0530 (0:00:00.063)       0:22:12.075 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Replace loggers] *****************************
+Wednesday 19 August 2026  05:12:51 +0530 (0:00:04.599)       0:22:16.674 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Replace DailyRollingFileAppender with RollingFileAppender] ***
+Wednesday 19 August 2026  05:12:51 +0530 (0:00:00.062)       0:22:16.737 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Key log4j.appender.X.DatePattern] *****
+Wednesday 19 August 2026  05:12:55 +0530 (0:00:04.482)       0:22:21.220 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Register Appenders] **************************
+Wednesday 19 August 2026  05:13:00 +0530 (0:00:04.556)       0:22:25.776 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Add Max Size Properties] *********************
+Wednesday 19 August 2026  05:13:04 +0530 (0:00:04.547)       0:22:30.324 ****** 
+changed: [upgradenode3] => (item=['file', 'Append=true'])
+changed: [upgradenode3] => (item=['file', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['file', 'MaxFileSize=100MB'])
+
+TASK [confluent.platform.schema_registry : Set Permissions on Log4j Conf] ******
+Wednesday 19 August 2026  05:13:18 +0530 (0:00:13.783)       0:22:44.107 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:04.588)       0:22:48.695 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.022)       0:22:48.717 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.019)       0:22:48.737 ****** 
+skipping: [upgradenode3] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'file'}) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Restart schema registry] ************
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.019)       0:22:48.756 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Copy Schema Registry Jolokia Access Control File] ***
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.017)       0:22:48.774 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Schema Registry Jolokia Config] ***
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.017)       0:22:48.792 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Deploy JMX Exporter Config File] ****
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.017)       0:22:48.809 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Basic Auth Jaas File] ********
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.018)       0:22:48.828 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Basic Auth Password File] ****
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.015)       0:22:48.843 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Create Service Override Directory] ***
+Wednesday 19 August 2026  05:13:23 +0530 (0:00:00.049)       0:22:48.893 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Write Service Overrides] ************
+Wednesday 19 August 2026  05:13:28 +0530 (0:00:04.735)       0:22:53.629 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Certs were Updated - Trigger Restart] ***
+Wednesday 19 August 2026  05:13:56 +0530 (0:00:28.106)       0:23:21.735 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : meta] *******************************
+Wednesday 19 August 2026  05:13:56 +0530 (0:00:00.020)       0:23:21.755 ****** 
+
+RUNNING HANDLER [confluent.platform.schema_registry : restart schema-registry] ***
+Wednesday 19 August 2026  05:13:56 +0530 (0:00:00.007)       0:23:21.762 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/schema_registry/tasks/restart_and_wait.yml for upgradenode3
+
+RUNNING HANDLER [confluent.platform.schema_registry : Restart Schema Registry] ***
+Wednesday 19 August 2026  05:13:56 +0530 (0:00:00.025)       0:23:21.787 ****** 
+changed: [upgradenode3]
+
+RUNNING HANDLER [confluent.platform.schema_registry : Startup Delay] ***********
+Wednesday 19 August 2026  05:14:01 +0530 (0:00:05.188)       0:23:26.976 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Start Schema Registry Service] ******
+Wednesday 19 August 2026  05:14:21 +0530 (0:00:19.581)       0:23:46.558 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Health Check] ***********************
+Wednesday 19 August 2026  05:14:26 +0530 (0:00:05.164)       0:23:51.722 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/schema_registry/tasks/health_check.yml for upgradenode3
+
+TASK [confluent.platform.schema_registry : Wait for API to return 200] *********
+Wednesday 19 August 2026  05:14:26 +0530 (0:00:00.041)       0:23:51.763 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : set_fact] ***************************
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:15.063)       0:24:06.827 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Wait for API to return 200 - mTLS] ***
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.022)       0:24:06.850 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Fetch Files for Debugging Failure] ***
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.014)       0:24:06.865 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Fail Provisioning] ******************
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.016)       0:24:06.882 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Register Cluster] *******************
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.019)       0:24:06.901 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.schema_registry : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.020)       0:24:06.922 ****** 
+skipping: [upgradenode3] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/schema_registry.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/schema_registry.key) 
+skipping: [upgradenode3]
+
+TASK [Proceed Prompt] **********************************************************
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.064)       0:24:06.987 ****** 
+skipping: [upgradenode3]
+
+PLAY [Kafka Connect Status Finding] ********************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  05:14:41 +0530 (0:00:00.027)       0:24:07.014 ****** 
+ok: [upgradenode3]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  05:14:48 +0530 (0:00:06.700)       0:24:13.715 ****** 
+ok: [upgradenode3]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  05:14:48 +0530 (0:00:00.027)       0:24:13.742 ****** 
+ok: [upgradenode3]
+
+PLAY [Kafka Connect Parallel Provisioning] *************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  05:14:48 +0530 (0:00:00.025)       0:24:13.768 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Gather OS Facts] **********************
+Wednesday 19 August 2026  05:14:48 +0530 (0:00:00.018)       0:24:13.786 ****** 
+ok: [upgradenode3] => (item=ansible_os_family)
+ok: [upgradenode3] => (item=ansible_fqdn)
+
+TASK [confluent.platform.kafka_connect : Validate Kafka Connect Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  05:14:58 +0530 (0:00:09.856)       0:24:23.643 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode3
+
+TASK [confluent.platform.kafka_connect : Check if Custom Jolokia Access Control File Exists - Kafka Connect] ***
+Wednesday 19 August 2026  05:14:58 +0530 (0:00:00.030)       0:24:23.673 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Fail if Custom Jolokia Access Control File Path is not set - Kafka Connect] ***
+Wednesday 19 August 2026  05:14:58 +0530 (0:00:00.021)       0:24:23.694 ****** 
+skipping: [upgradenode3]
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  05:14:58 +0530 (0:00:00.019)       0:24:23.714 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  05:14:58 +0530 (0:00:00.049)       0:24:23.763 ****** 
+ok: [upgradenode3] => (item=confluent-common)
+ok: [upgradenode3] => (item=confluent-rest-utils)
+ok: [upgradenode3] => (item=confluent-metadata-service)
+ok: [upgradenode3] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode3] => (item=confluent-kafka-rest)
+ok: [upgradenode3] => (item=confluent-server-rest)
+ok: [upgradenode3] => (item=confluent-telemetry)
+ok: [upgradenode3] => (item=confluent-server)
+ok: [upgradenode3] => (item=confluent-hub-client)
+ok: [upgradenode3] => (item=confluent-kafka-connect-replicator)
+ok: [upgradenode3] => (item=confluent-security)
+ok: [upgradenode3] => (item=confluent-rebalancer)
+ok: [upgradenode3] => (item=confluent-control-center-fe)
+ok: [upgradenode3] => (item=confluent-control-center)
+ok: [upgradenode3] => (item=confluent-schema-registry)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:16:39 +0530 (0:01:41.209)       0:26:04.973 ****** 
+skipping: [upgradenode3] => (item=confluent-common) 
+skipping: [upgradenode3] => (item=confluent-rest-utils) 
+skipping: [upgradenode3] => (item=confluent-metadata-service) 
+skipping: [upgradenode3] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode3] => (item=confluent-kafka-rest) 
+skipping: [upgradenode3] => (item=confluent-server-rest) 
+skipping: [upgradenode3] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-hub-client) 
+skipping: [upgradenode3] => (item=confluent-kafka-connect-replicator) 
+skipping: [upgradenode3] => (item=confluent-security) 
+skipping: [upgradenode3] => (item=confluent-rebalancer) 
+skipping: [upgradenode3] => (item=confluent-control-center-fe) 
+skipping: [upgradenode3] => (item=confluent-control-center) 
+skipping: [upgradenode3] => (item=confluent-schema-registry) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:16:39 +0530 (0:00:00.037)       0:26:05.011 ****** 
+skipping: [upgradenode3]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:16:39 +0530 (0:00:00.036)       0:26:05.047 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:16:39 +0530 (0:00:00.056)       0:26:05.103 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:16:45 +0530 (0:00:06.154)       0:26:11.258 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:16:45 +0530 (0:00:00.022)       0:26:11.280 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:16:45 +0530 (0:00:00.024)       0:26:11.305 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:16:45 +0530 (0:00:00.020)       0:26:11.326 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:16:45 +0530 (0:00:00.018)       0:26:11.344 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:16:52 +0530 (0:00:07.009)       0:26:18.354 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:16:52 +0530 (0:00:00.022)       0:26:18.377 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:16:52 +0530 (0:00:00.017)       0:26:18.395 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Install the Kafka Connect Packages] ***
+Wednesday 19 August 2026  05:16:52 +0530 (0:00:00.021)       0:26:18.416 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Install the Kafka Connect Packages] ***
+Wednesday 19 August 2026  05:18:38 +0530 (0:01:45.531)       0:28:03.948 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Kafka Connect Group] ***********
+Wednesday 19 August 2026  05:18:38 +0530 (0:00:00.031)       0:28:03.980 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Check if Kafka Connect User Exists] ***
+Wednesday 19 August 2026  05:18:43 +0530 (0:00:04.655)       0:28:08.635 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Kafka Connect User] ************
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:04.567)       0:28:13.203 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Copy Kafka Connect Service from archive file to system] ***
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.026)       0:28:13.230 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Copy Kafka Connect Service from default install to system] ***
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.015)       0:28:13.246 ****** 
+skipping: [upgradenode3]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.015)       0:28:13.261 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.042)       0:28:13.303 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Configure RBAC] ***********************
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.022)       0:28:13.326 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Kafka Connect Config directory] ***
+Wednesday 19 August 2026  05:18:47 +0530 (0:00:00.017)       0:28:13.344 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Kafka Connect Config] **********
+Wednesday 19 August 2026  05:18:52 +0530 (0:00:04.552)       0:28:17.897 ****** 
+changed: [upgradenode3]
+
+TASK [Create Kafka Connect Config with Secrets Protection] *********************
+Wednesday 19 August 2026  05:19:20 +0530 (0:00:28.235)       0:28:46.132 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Install Connect Plugins] **************
+Wednesday 19 August 2026  05:19:20 +0530 (0:00:00.058)       0:28:46.190 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_connect/tasks/connect_plugins.yml for upgradenode3
+
+TASK [confluent.platform.kafka_connect : Ensure Plugin Dirs] *******************
+Wednesday 19 August 2026  05:19:20 +0530 (0:00:00.030)       0:28:46.220 ****** 
+changed: [upgradenode3] => (item=/usr/share/java/connect_plugins)
+
+TASK [confluent.platform.kafka_connect : set_fact] *****************************
+Wednesday 19 August 2026  05:19:25 +0530 (0:00:04.890)       0:28:51.111 ****** 
+skipping: [upgradenode3]
+
+TASK [Copy Kafka Connect Local Plugins from Controller to Host] ****************
+Wednesday 19 August 2026  05:19:25 +0530 (0:00:00.019)       0:28:51.131 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Installing Local Plugins] *************
+Wednesday 19 August 2026  05:19:25 +0530 (0:00:00.021)       0:28:51.152 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create tmp directory for downloading remote plugins] ***
+Wednesday 19 August 2026  05:19:25 +0530 (0:00:00.014)       0:28:51.166 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Download Remote Plugins] **************
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:04.499)       0:28:55.666 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Installing Remote Plugins] ************
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:00.016)       0:28:55.682 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Set Permissions on all Plugin Files] ***
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:00.015)       0:28:55.698 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Confluent Hub] ************************
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:00.019)       0:28:55.718 ****** 
+skipping: [upgradenode3]
+
+TASK [Copy Kafka Connect Files] ************************************************
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:00.019)       0:28:55.737 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Logs Directory] ****************
+Wednesday 19 August 2026  05:19:30 +0530 (0:00:00.019)       0:28:55.756 ****** 
+changed: [upgradenode3]
+
+TASK [Update Connect log4j Config for Log Cleanup] *****************************
+Wednesday 19 August 2026  05:19:34 +0530 (0:00:04.540)       0:29:00.297 ****** 
+
+TASK [confluent.platform.common : Replace rootLogger] **************************
+Wednesday 19 August 2026  05:19:34 +0530 (0:00:00.102)       0:29:00.400 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Replace loggers] *****************************
+Wednesday 19 August 2026  05:19:39 +0530 (0:00:04.668)       0:29:05.068 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Replace DailyRollingFileAppender with RollingFileAppender] ***
+Wednesday 19 August 2026  05:19:39 +0530 (0:00:00.028)       0:29:05.096 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Key log4j.appender.X.DatePattern] *****
+Wednesday 19 August 2026  05:19:44 +0530 (0:00:04.498)       0:29:09.595 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.common : Register Appenders] **************************
+Wednesday 19 August 2026  05:19:48 +0530 (0:00:04.505)       0:29:14.101 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Add Max Size Properties] *********************
+Wednesday 19 August 2026  05:19:53 +0530 (0:00:04.638)       0:29:18.739 ****** 
+changed: [upgradenode3] => (item=['connectAppender', 'Append=true'])
+changed: [upgradenode3] => (item=['connectAppender', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['connectAppender', 'MaxFileSize=100MB'])
+
+TASK [confluent.platform.kafka_connect : Set Permissions on Log4j Conf] ********
+Wednesday 19 August 2026  05:20:07 +0530 (0:00:13.754)       0:29:32.494 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:04.561)       0:29:37.055 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.019)       0:29:37.074 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.020)       0:29:37.095 ****** 
+skipping: [upgradenode3] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'connectAppender'}) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Restart kafka connect] ****************
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.019)       0:29:37.115 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Copy Kafka Connect Jolokia Access Control File] ***
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.018)       0:29:37.134 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Kafka Connect Jolokia Config] ***
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.016)       0:29:37.150 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Deploy JMX Exporter Config File] ******
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.017)       0:29:37.168 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Basic Auth Jaas File] **********
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.016)       0:29:37.185 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Basic Auth Password File] ******
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.049)       0:29:37.234 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Create Service Override Directory] ****
+Wednesday 19 August 2026  05:20:11 +0530 (0:00:00.018)       0:29:37.252 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Write Service Overrides] **************
+Wednesday 19 August 2026  05:20:16 +0530 (0:00:04.632)       0:29:41.884 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Certs were Updated - Trigger Restart] ***
+Wednesday 19 August 2026  05:20:44 +0530 (0:00:28.087)       0:30:09.972 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : meta] *********************************
+Wednesday 19 August 2026  05:20:44 +0530 (0:00:00.023)       0:30:09.995 ****** 
+
+RUNNING HANDLER [confluent.platform.kafka_connect : restart connect distributed] ***
+Wednesday 19 August 2026  05:20:44 +0530 (0:00:00.006)       0:30:10.002 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_connect/tasks/restart_and_wait.yml for upgradenode3
+
+RUNNING HANDLER [confluent.platform.kafka_connect : Restart Kafka Connect] *****
+Wednesday 19 August 2026  05:20:44 +0530 (0:00:00.023)       0:30:10.025 ****** 
+changed: [upgradenode3]
+
+RUNNING HANDLER [confluent.platform.kafka_connect : Startup Delay] *************
+Wednesday 19 August 2026  05:20:49 +0530 (0:00:05.284)       0:30:15.309 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Start Connect Service] ****************
+Wednesday 19 August 2026  05:21:24 +0530 (0:00:34.693)       0:30:50.003 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Health Check] *************************
+Wednesday 19 August 2026  05:21:29 +0530 (0:00:05.237)       0:30:55.240 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_connect/tasks/health_check.yml for upgradenode3
+
+TASK [confluent.platform.kafka_connect : Wait for API to return 200] ***********
+Wednesday 19 August 2026  05:21:29 +0530 (0:00:00.040)       0:30:55.281 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : set_fact] *****************************
+Wednesday 19 August 2026  05:21:44 +0530 (0:00:14.653)       0:31:09.935 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Wait for API to return 200 - mTLS] ****
+Wednesday 19 August 2026  05:21:44 +0530 (0:00:00.027)       0:31:09.962 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Fetch Files for Debugging Failure] ****
+Wednesday 19 August 2026  05:21:44 +0530 (0:00:00.019)       0:31:09.982 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Fail Provisioning] ********************
+Wednesday 19 August 2026  05:21:44 +0530 (0:00:00.019)       0:31:10.001 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Set parent Cluster] *******************
+Wednesday 19 August 2026  05:21:44 +0530 (0:00:00.019)       0:31:10.021 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Register Cluster] *********************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.511)       0:31:10.532 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_connect/tasks/register_cluster.yml for upgradenode3
+
+TASK [confluent.platform.common : Get Kafka Cluster ID from Embedded Rest Proxy] ***
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.059)       0:31:10.591 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Parse Kafka Cluster ID from json query] ******
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.017)       0:31:10.608 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Kafka Cluster ID from Zookeeper] *********
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.015)       0:31:10.624 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : set_fact] ************************************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.015)       0:31:10.640 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Set kafka_cluster_id Variable] ***************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.014)       0:31:10.654 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Create SSL Certificate Directory] ************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.014)       0:31:10.669 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check if MDS public pem file exists on Ansible Controller] ***
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.015)       0:31:10.685 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Debug] ***************************************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.016)       0:31:10.701 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Copy in MDS Public Pem File] *****************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.016)       0:31:10.718 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Fetch Kafka Connect Cluster Groups] ***
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.028)       0:31:10.746 ****** 
+ok: [upgradenode3] => (item=upgradenode3)
+
+TASK [confluent.platform.kafka_connect : Register Kafka Connect Cluster] *******
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.076)       0:31:10.822 ****** 
+skipping: [upgradenode3] => (item=upgradenode2) 
+skipping: [upgradenode3] => (item=upgradenode2) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Deploy Connectors] ********************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.149)       0:31:10.972 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_connect/tasks/deploy_connectors.yml for upgradenode3
+
+TASK [confluent.platform.kafka_connect : Register Kafka Connect Subgroups] *****
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.035)       0:31:11.007 ****** 
+ok: [upgradenode3] => (item=upgradenode3)
+
+TASK [confluent.platform.kafka_connect : Add Role Bindings for Connect] ********
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.030)       0:31:11.038 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : set_fact] *****************************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.019)       0:31:11.057 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Register connector configs and remove deleted connectors for single cluster] ***
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.020)       0:31:11.077 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_connect : Register connector configs and remove deleted connectors for Multiple Clusters] ***
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.022)       0:31:11.100 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_connect_serial
+skipping: [upgradenode3] => (item=kafka_broker) 
+skipping: [upgradenode3] => (item=kafka_broker_parallel) 
+skipping: [upgradenode3] => (item=kafka_rest) 
+skipping: [upgradenode3] => (item=kafka_connect_parallel) 
+skipping: [upgradenode3] => (item=ksql) 
+skipping: [upgradenode3] => (item=schema_registry) 
+skipping: [upgradenode3] => (item=kafka_connect) 
+skipping: [upgradenode3]
+
+PLAY [Kafka Connect Serial Provisioning] ***************************************
+skipping: no hosts matched
+
+PLAY [Cleanup Temporary SSL Files] *********************************************
+
+TASK [Delete temporary keys/certs when keystore and trustore is provided] ******
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.182)       0:31:11.282 ****** 
+skipping: [upgradenode3] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_connect.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_connect.key) 
+skipping: [upgradenode3]
+
+PLAY [KSQL Status Finding] *****************************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  05:21:45 +0530 (0:00:00.031)       0:31:11.313 ****** 
+ok: [upgradenode3]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  05:21:53 +0530 (0:00:07.135)       0:31:18.449 ****** 
+ok: [upgradenode3]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  05:21:53 +0530 (0:00:00.029)       0:31:18.479 ****** 
+ok: [upgradenode3]
+
+PLAY [KSQL Parallel Provisioning] **********************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  05:21:53 +0530 (0:00:00.024)       0:31:18.504 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Gather OS Facts] *******************************
+Wednesday 19 August 2026  05:21:53 +0530 (0:00:00.016)       0:31:18.521 ****** 
+ok: [upgradenode3] => (item=ansible_os_family)
+ok: [upgradenode3] => (item=ansible_fqdn)
+
+TASK [confluent.platform.ksql : Validate KSQL Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  05:22:02 +0530 (0:00:09.884)       0:31:28.405 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode3
+
+TASK [confluent.platform.ksql : Check if Custom Jolokia Access Control File Exists - KSQL] ***
+Wednesday 19 August 2026  05:22:03 +0530 (0:00:00.080)       0:31:28.486 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Fail if Custom Jolokia Access Control File Path is not set - KSQL] ***
+Wednesday 19 August 2026  05:22:03 +0530 (0:00:00.025)       0:31:28.511 ****** 
+skipping: [upgradenode3]
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  05:22:03 +0530 (0:00:00.021)       0:31:28.533 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  05:22:03 +0530 (0:00:00.052)       0:31:28.586 ****** 
+ok: [upgradenode3] => (item=confluent-common)
+ok: [upgradenode3] => (item=confluent-rest-utils)
+ok: [upgradenode3] => (item=confluent-metadata-service)
+ok: [upgradenode3] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode3] => (item=confluent-kafka-rest)
+ok: [upgradenode3] => (item=confluent-server-rest)
+ok: [upgradenode3] => (item=confluent-telemetry)
+ok: [upgradenode3] => (item=confluent-server)
+ok: [upgradenode3] => (item=confluent-ksqldb)
+ok: [upgradenode3] => (item=confluent-security)
+ok: [upgradenode3] => (item=confluent-rebalancer)
+ok: [upgradenode3] => (item=confluent-control-center-fe)
+ok: [upgradenode3] => (item=confluent-control-center)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:23:28 +0530 (0:01:25.146)       0:32:53.732 ****** 
+skipping: [upgradenode3] => (item=confluent-common) 
+skipping: [upgradenode3] => (item=confluent-rest-utils) 
+skipping: [upgradenode3] => (item=confluent-metadata-service) 
+skipping: [upgradenode3] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode3] => (item=confluent-kafka-rest) 
+skipping: [upgradenode3] => (item=confluent-server-rest) 
+skipping: [upgradenode3] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-ksqldb) 
+skipping: [upgradenode3] => (item=confluent-security) 
+skipping: [upgradenode3] => (item=confluent-rebalancer) 
+skipping: [upgradenode3] => (item=confluent-control-center-fe) 
+skipping: [upgradenode3] => (item=confluent-control-center) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:23:28 +0530 (0:00:00.033)       0:32:53.766 ****** 
+skipping: [upgradenode3]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:23:28 +0530 (0:00:00.030)       0:32:53.796 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:23:28 +0530 (0:00:00.086)       0:32:53.883 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:23:34 +0530 (0:00:06.127)       0:33:00.010 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:23:34 +0530 (0:00:00.022)       0:33:00.033 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:23:34 +0530 (0:00:00.024)       0:33:00.057 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:23:34 +0530 (0:00:00.020)       0:33:00.078 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:23:34 +0530 (0:00:00.018)       0:33:00.096 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:23:41 +0530 (0:00:06.791)       0:33:06.888 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:23:41 +0530 (0:00:00.024)       0:33:06.912 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:23:41 +0530 (0:00:00.020)       0:33:06.932 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Install the Ksql Packages] *********************
+Wednesday 19 August 2026  05:23:41 +0530 (0:00:00.021)       0:33:06.954 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Install the Ksql Packages] *********************
+Wednesday 19 August 2026  05:24:14 +0530 (0:00:33.118)       0:33:40.073 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql Group] *****************************
+Wednesday 19 August 2026  05:24:14 +0530 (0:00:00.020)       0:33:40.093 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Check if Ksql User Exists] *********************
+Wednesday 19 August 2026  05:24:19 +0530 (0:00:04.490)       0:33:44.584 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql User] ******************************
+Wednesday 19 August 2026  05:24:23 +0530 (0:00:04.484)       0:33:49.069 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Set Ksql streams dir permissions] **************
+Wednesday 19 August 2026  05:24:23 +0530 (0:00:00.027)       0:33:49.097 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Copy Ksql Service from archive file to system] ***
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:04.678)       0:33:53.776 ****** 
+skipping: [upgradenode3]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.017)       0:33:53.793 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Import Public Confluent Cloud Certificates Authority Certs into Truststore] ***
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.043)       0:33:53.836 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.041)       0:33:53.878 ****** 
+skipping: [upgradenode3]
+
+TASK [Copy Custom KSQL Files] **************************************************
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.026)       0:33:53.904 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Configure RBAC] ********************************
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.020)       0:33:53.925 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql Config directory] ******************
+Wednesday 19 August 2026  05:24:28 +0530 (0:00:00.019)       0:33:53.944 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql Config] ****************************
+Wednesday 19 August 2026  05:24:33 +0530 (0:00:04.627)       0:33:58.571 ****** 
+changed: [upgradenode3]
+
+TASK [Create Ksql Config with Secrets Protection] ******************************
+Wednesday 19 August 2026  05:25:03 +0530 (0:00:29.978)       0:34:28.550 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Logs Directory] *************************
+Wednesday 19 August 2026  05:25:03 +0530 (0:00:00.028)       0:34:28.578 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create log4j Directory] ************************
+Wednesday 19 August 2026  05:25:07 +0530 (0:00:04.583)       0:34:33.162 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql log4j Config] **********************
+Wednesday 19 August 2026  05:25:12 +0530 (0:00:04.514)       0:34:37.677 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create logredactor rule file directory] ********
+Wednesday 19 August 2026  05:25:39 +0530 (0:00:27.646)       0:35:05.324 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.119)       0:35:05.443 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.022)       0:35:05.466 ****** 
+skipping: [upgradenode3] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'main'}) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Restart ksql] **********************************
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.022)       0:35:05.489 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Copy KSQL Jolokia Access Control File] *********
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.021)       0:35:05.510 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Ksql Jolokia Config] ********************
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.020)       0:35:05.530 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create RocksDB Directory] **********************
+Wednesday 19 August 2026  05:25:40 +0530 (0:00:00.023)       0:35:05.554 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Set Permission to RocksDB Files] ***************
+Wednesday 19 August 2026  05:25:44 +0530 (0:00:04.566)       0:35:10.121 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Deploy JMX Exporter Config File] ***************
+Wednesday 19 August 2026  05:25:49 +0530 (0:00:04.693)       0:35:14.814 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Basic Auth Jaas File] *******************
+Wednesday 19 August 2026  05:25:49 +0530 (0:00:00.018)       0:35:14.832 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Basic Auth Password File] ***************
+Wednesday 19 August 2026  05:25:49 +0530 (0:00:00.018)       0:35:14.851 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Create Service Override Directory] *************
+Wednesday 19 August 2026  05:25:49 +0530 (0:00:00.016)       0:35:14.867 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Write Service Overrides] ***********************
+Wednesday 19 August 2026  05:25:54 +0530 (0:00:04.815)       0:35:19.683 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Certs were Updated - Trigger Restart] **********
+Wednesday 19 August 2026  05:26:22 +0530 (0:00:27.848)       0:35:47.531 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : meta] ******************************************
+Wednesday 19 August 2026  05:26:22 +0530 (0:00:00.020)       0:35:47.552 ****** 
+
+RUNNING HANDLER [confluent.platform.ksql : restart ksql] ***********************
+Wednesday 19 August 2026  05:26:22 +0530 (0:00:00.006)       0:35:47.559 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/ksql/tasks/restart_and_wait.yml for upgradenode3
+
+RUNNING HANDLER [confluent.platform.ksql : Restart KSQL] ***********************
+Wednesday 19 August 2026  05:26:22 +0530 (0:00:00.065)       0:35:47.624 ****** 
+changed: [upgradenode3]
+
+RUNNING HANDLER [confluent.platform.ksql : Startup Delay] **********************
+Wednesday 19 August 2026  05:26:27 +0530 (0:00:05.280)       0:35:52.905 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Start Ksql Service] ****************************
+Wednesday 19 August 2026  05:26:52 +0530 (0:00:24.628)       0:36:17.534 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.ksql : Health Check] **********************************
+Wednesday 19 August 2026  05:26:57 +0530 (0:00:05.220)       0:36:22.754 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/ksql/tasks/health_check.yml for upgradenode3
+
+TASK [confluent.platform.ksql : Wait for API to return 200] ********************
+Wednesday 19 August 2026  05:26:57 +0530 (0:00:00.047)       0:36:22.802 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : set_fact] **************************************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:15.128)       0:36:37.930 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Wait for API to return 200 - mTLS] *************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.020)       0:36:37.951 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Fetch Files for Debugging Failure] *************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.020)       0:36:37.971 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Fail Provisioning] *****************************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.019)       0:36:37.991 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Set parent Cluster] ****************************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.019)       0:36:38.010 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.ksql : Register Cluster] ******************************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.233)       0:36:38.243 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/ksql/tasks/register_cluster.yml for upgradenode3
+
+TASK [confluent.platform.common : Get Kafka Cluster ID from Embedded Rest Proxy] ***
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.055)       0:36:38.299 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Parse Kafka Cluster ID from json query] ******
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.054)       0:36:38.354 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Kafka Cluster ID from Zookeeper] *********
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.015)       0:36:38.369 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : set_fact] ************************************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.014)       0:36:38.384 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Set kafka_cluster_id Variable] ***************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.014)       0:36:38.398 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Create SSL Certificate Directory] ************
+Wednesday 19 August 2026  05:27:12 +0530 (0:00:00.013)       0:36:38.412 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Check if MDS public pem file exists on Ansible Controller] ***
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.014)       0:36:38.426 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Debug] ***************************************
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.014)       0:36:38.441 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Copy in MDS Public Pem File] *****************
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.013)       0:36:38.454 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Fetch KSQL Cluster Groups] *********************
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.024)       0:36:38.479 ****** 
+ok: [upgradenode3] => (item=upgradenode3)
+
+TASK [confluent.platform.ksql : Register KSQL Cluster] *************************
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.028)       0:36:38.507 ****** 
+skipping: [upgradenode3] => (item=upgradenode2) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode2) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3] => (item=upgradenode3) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.ksql : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.076)       0:36:38.583 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring: ksql_serial
+skipping: [upgradenode3] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/ksql.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/ksql.key) 
+skipping: [upgradenode3]
+
+PLAY [KSQL Serial Provisioning] ************************************************
+skipping: no hosts matched
+
+PLAY [Kafka Rest Status Finding] ***********************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  05:27:13 +0530 (0:00:00.039)       0:36:38.623 ****** 
+ok: [upgradenode3]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  05:27:19 +0530 (0:00:06.788)       0:36:45.412 ****** 
+ok: [upgradenode3]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  05:27:20 +0530 (0:00:00.022)       0:36:45.434 ****** 
+ok: [upgradenode3]
+
+PLAY [Kafka Rest Parallel Provisioning] ****************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  05:27:20 +0530 (0:00:00.023)       0:36:45.457 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Gather OS Facts] *************************
+Wednesday 19 August 2026  05:27:20 +0530 (0:00:00.017)       0:36:45.475 ****** 
+ok: [upgradenode3] => (item=ansible_os_family)
+ok: [upgradenode3] => (item=ansible_fqdn)
+
+TASK [confluent.platform.kafka_rest : Validate Kafka REST Proxy Jolokia Access Control Configuration] ***
+Wednesday 19 August 2026  05:27:29 +0530 (0:00:09.922)       0:36:55.397 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/common/tasks/component_validations.yml for upgradenode3
+
+TASK [confluent.platform.kafka_rest : Check if Custom Jolokia Access Control File Exists - Kafka REST Proxy] ***
+Wednesday 19 August 2026  05:27:30 +0530 (0:00:00.029)       0:36:55.427 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Fail if Custom Jolokia Access Control File Path is not set - Kafka REST Proxy] ***
+Wednesday 19 August 2026  05:27:30 +0530 (0:00:00.018)       0:36:55.445 ****** 
+skipping: [upgradenode3]
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  05:27:30 +0530 (0:00:00.016)       0:36:55.462 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  05:27:30 +0530 (0:00:00.045)       0:36:55.507 ****** 
+ok: [upgradenode3] => (item=confluent-common)
+ok: [upgradenode3] => (item=confluent-rest-utils)
+ok: [upgradenode3] => (item=confluent-metadata-service)
+ok: [upgradenode3] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode3] => (item=confluent-kafka-rest)
+ok: [upgradenode3] => (item=confluent-server-rest)
+ok: [upgradenode3] => (item=confluent-telemetry)
+ok: [upgradenode3] => (item=confluent-server)
+ok: [upgradenode3] => (item=confluent-security)
+ok: [upgradenode3] => (item=confluent-rebalancer)
+ok: [upgradenode3] => (item=confluent-control-center-fe)
+ok: [upgradenode3] => (item=confluent-control-center)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:28:51 +0530 (0:01:21.398)       0:38:16.906 ****** 
+skipping: [upgradenode3] => (item=confluent-common) 
+skipping: [upgradenode3] => (item=confluent-rest-utils) 
+skipping: [upgradenode3] => (item=confluent-metadata-service) 
+skipping: [upgradenode3] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode3] => (item=confluent-kafka-rest) 
+skipping: [upgradenode3] => (item=confluent-server-rest) 
+skipping: [upgradenode3] => (item=confluent-telemetry) 
+skipping: [upgradenode3] => (item=confluent-server) 
+skipping: [upgradenode3] => (item=confluent-security) 
+skipping: [upgradenode3] => (item=confluent-rebalancer) 
+skipping: [upgradenode3] => (item=confluent-control-center-fe) 
+skipping: [upgradenode3] => (item=confluent-control-center) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:28:51 +0530 (0:00:00.147)       0:38:17.054 ****** 
+skipping: [upgradenode3]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:28:52 +0530 (0:00:00.633)       0:38:17.687 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:28:52 +0530 (0:00:00.522)       0:38:18.210 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:29:00 +0530 (0:00:07.602)       0:38:25.812 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:29:00 +0530 (0:00:00.025)       0:38:25.837 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:29:00 +0530 (0:00:00.025)       0:38:25.862 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:29:00 +0530 (0:00:00.019)       0:38:25.882 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:29:00 +0530 (0:00:00.018)       0:38:25.901 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:29:07 +0530 (0:00:06.967)       0:38:32.868 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:29:07 +0530 (0:00:00.040)       0:38:32.908 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:29:07 +0530 (0:00:00.072)       0:38:32.981 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Install the Kafka Rest Packages] *********
+Wednesday 19 August 2026  05:29:07 +0530 (0:00:00.025)       0:38:33.006 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Install the Kafka Rest Packages] *********
+Wednesday 19 August 2026  05:29:15 +0530 (0:00:08.141)       0:38:41.148 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Kafka Rest Group] *****************
+Wednesday 19 August 2026  05:29:15 +0530 (0:00:00.015)       0:38:41.163 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Check if Kafka Rest User Exists] *********
+Wednesday 19 August 2026  05:29:23 +0530 (0:00:08.102)       0:38:49.266 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Kafka Rest User] ******************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:04.487)       0:38:53.754 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Copy Kafka Rest Service from archive file to system] ***
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.031)       0:38:53.786 ****** 
+skipping: [upgradenode3]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.016)       0:38:53.802 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.039)       0:38:53.841 ****** 
+skipping: [upgradenode3]
+
+TASK [Copy Custom Kafka Rest Files] ********************************************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.022)       0:38:53.863 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Configure RBAC] **************************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.019)       0:38:53.883 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create SSL Certificate Directory] ********
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.019)       0:38:53.903 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Check if MDS public pem file exists on Ansible Controller] ***
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.017)       0:38:53.921 ****** 
+ok: [upgradenode3 -> localhost]
+
+TASK [confluent.platform.kafka_rest : Debug] ***********************************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.328)       0:38:54.250 ****** 
+ok: [upgradenode3] => {
+    "msg": "WARNING - The file generated_ssl_files/public.pem doesn't exist on the control node"
+}
+
+TASK [confluent.platform.kafka_rest : Copy in MDS Public Pem File] *************
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.020)       0:38:54.270 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Kafka Rest Config directory] ******
+Wednesday 19 August 2026  05:29:28 +0530 (0:00:00.048)       0:38:54.319 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Kafka Rest Config] ****************
+Wednesday 19 August 2026  05:29:33 +0530 (0:00:04.498)       0:38:58.818 ****** 
+changed: [upgradenode3]
+
+TASK [Create Kafka Rest Config with Secrets Protection] ************************
+Wednesday 19 August 2026  05:30:01 +0530 (0:00:27.837)       0:39:26.655 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Logs Directory] *******************
+Wednesday 19 August 2026  05:30:01 +0530 (0:00:00.023)       0:39:26.679 ****** 
+changed: [upgradenode3]
+
+TASK [Update log4j Config for Log Cleanup] *************************************
+Wednesday 19 August 2026  05:30:05 +0530 (0:00:04.566)       0:39:31.245 ****** 
+
+TASK [confluent.platform.common : Replace rootLogger] **************************
+Wednesday 19 August 2026  05:30:05 +0530 (0:00:00.069)       0:39:31.315 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Replace loggers] *****************************
+Wednesday 19 August 2026  05:30:10 +0530 (0:00:04.545)       0:39:35.860 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.common : Replace DailyRollingFileAppender with RollingFileAppender] ***
+Wednesday 19 August 2026  05:30:10 +0530 (0:00:00.026)       0:39:35.886 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Remove Key log4j.appender.X.DatePattern] *****
+Wednesday 19 August 2026  05:30:14 +0530 (0:00:04.468)       0:39:40.355 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Register Appenders] **************************
+Wednesday 19 August 2026  05:30:19 +0530 (0:00:04.556)       0:39:44.911 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.common : Add Max Size Properties] *********************
+Wednesday 19 August 2026  05:30:23 +0530 (0:00:04.493)       0:39:49.405 ****** 
+changed: [upgradenode3] => (item=['file', 'Append=true'])
+changed: [upgradenode3] => (item=['file', 'MaxBackupIndex=10'])
+changed: [upgradenode3] => (item=['file', 'MaxFileSize=100MB'])
+
+TASK [confluent.platform.kafka_rest : Set Permissions on Log4j Conf] ***********
+Wednesday 19 August 2026  05:30:37 +0530 (0:00:13.466)       0:40:02.872 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:04.617)       0:40:07.490 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.019)       0:40:07.510 ****** 
+skipping: [upgradenode3]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.017)       0:40:07.527 ****** 
+skipping: [upgradenode3] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'file'}) 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Restart kafka rest] **********************
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.020)       0:40:07.547 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Copy Kafka REST Proxy Jolokia Access Control File] ***
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.016)       0:40:07.564 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Kafka Rest Jolokia Config] ********
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.017)       0:40:07.582 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Deploy JMX Exporter Config File] *********
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.017)       0:40:07.599 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Basic Auth Jaas File] *************
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.017)       0:40:07.617 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Basic Auth Password File] *********
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.014)       0:40:07.631 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Create Service Override Directory] *******
+Wednesday 19 August 2026  05:30:42 +0530 (0:00:00.014)       0:40:07.646 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Write Service Overrides] *****************
+Wednesday 19 August 2026  05:30:46 +0530 (0:00:04.559)       0:40:12.206 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Certs were Updated - Trigger Restart] ****
+Wednesday 19 August 2026  05:31:14 +0530 (0:00:27.693)       0:40:39.899 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : meta] ************************************
+Wednesday 19 August 2026  05:31:14 +0530 (0:00:00.028)       0:40:39.927 ****** 
+
+RUNNING HANDLER [confluent.platform.kafka_rest : restart kafka-rest] ***********
+Wednesday 19 August 2026  05:31:14 +0530 (0:00:00.007)       0:40:39.935 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_rest/tasks/restart_and_wait.yml for upgradenode3
+
+RUNNING HANDLER [confluent.platform.kafka_rest : Restart Kafka Rest] ***********
+Wednesday 19 August 2026  05:31:14 +0530 (0:00:00.024)       0:40:39.959 ****** 
+changed: [upgradenode3]
+
+RUNNING HANDLER [confluent.platform.kafka_rest : Startup Delay] ****************
+Wednesday 19 August 2026  05:31:19 +0530 (0:00:05.211)       0:40:45.171 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Start Kafka Rest Service] ****************
+Wednesday 19 August 2026  05:31:39 +0530 (0:00:19.706)       0:41:04.877 ****** 
+changed: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Health Check] ****************************
+Wednesday 19 August 2026  05:31:44 +0530 (0:00:05.282)       0:41:10.160 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/kafka_rest/tasks/health_check.yml for upgradenode3
+
+TASK [confluent.platform.kafka_rest : Wait for API to return 200] **************
+Wednesday 19 August 2026  05:31:44 +0530 (0:00:00.037)       0:41:10.197 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : set_fact] ********************************
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:16.659)       0:41:26.856 ****** 
+ok: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Wait for API to return 200 - mTLS] *******
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:00.024)       0:41:26.880 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Fetch Files for Debugging Failure] *******
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:00.016)       0:41:26.896 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Fail Provisioning] ***********************
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:00.020)       0:41:26.916 ****** 
+skipping: [upgradenode3]
+
+TASK [confluent.platform.kafka_rest : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:00.019)       0:41:26.936 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring: kafka_rest_serial
+skipping: [upgradenode3] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_rest.crt) 
+skipping: [upgradenode3] => (item=/var/ssl/private/kafka_rest.key) 
+skipping: [upgradenode3]
+
+PLAY [Kafka Rest Serial Provisioning] ******************************************
+skipping: no hosts matched
+
+PLAY [Control Center Status Finding] *******************************************
+
+TASK [Populate service facts] **************************************************
+Wednesday 19 August 2026  05:32:01 +0530 (0:00:00.036)       0:41:26.972 ****** 
+ok: [upgradenode1]
+
+TASK [Determine Installation Pattern - Parallel or Serial] *********************
+Wednesday 19 August 2026  05:32:08 +0530 (0:00:06.739)       0:41:33.712 ****** 
+ok: [upgradenode1]
+
+TASK [Group Hosts by Installation Pattern] *************************************
+Wednesday 19 August 2026  05:32:08 +0530 (0:00:00.027)       0:41:33.739 ****** 
+ok: [upgradenode1]
+
+PLAY [Control Center Parallel Provisioning] ************************************
+
+TASK [include_role : common] ***************************************************
+Wednesday 19 August 2026  05:32:08 +0530 (0:00:00.038)       0:41:33.777 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Gather OS Facts] *********************
+Wednesday 19 August 2026  05:32:08 +0530 (0:00:00.084)       0:41:33.862 ****** 
+ok: [upgradenode1] => (item=ansible_os_family)
+ok: [upgradenode1] => (item=ansible_fqdn)
+
+TASK [Validate Package Availability Before Removing Old Packages] **************
+Wednesday 19 August 2026  05:32:18 +0530 (0:00:09.752)       0:41:43.615 ****** 
+
+TASK [confluent.platform.common : Check Package Availability (RedHat)] *********
+Wednesday 19 August 2026  05:32:18 +0530 (0:00:00.049)       0:41:43.664 ****** 
+ok: [upgradenode1] => (item=confluent-common)
+ok: [upgradenode1] => (item=confluent-rest-utils)
+ok: [upgradenode1] => (item=confluent-metadata-service)
+ok: [upgradenode1] => (item=confluent-ce-kafka-http-server)
+ok: [upgradenode1] => (item=confluent-kafka-rest)
+ok: [upgradenode1] => (item=confluent-server-rest)
+ok: [upgradenode1] => (item=confluent-telemetry)
+ok: [upgradenode1] => (item=confluent-server)
+ok: [upgradenode1] => (item=confluent-security)
+ok: [upgradenode1] => (item=confluent-rebalancer)
+ok: [upgradenode1] => (item=confluent-control-center-fe)
+ok: [upgradenode1] => (item=confluent-control-center)
+
+TASK [confluent.platform.common : Check Package Availability (Debian)] *********
+Wednesday 19 August 2026  05:33:35 +0530 (0:01:17.698)       0:43:01.362 ****** 
+skipping: [upgradenode1] => (item=confluent-common) 
+skipping: [upgradenode1] => (item=confluent-rest-utils) 
+skipping: [upgradenode1] => (item=confluent-metadata-service) 
+skipping: [upgradenode1] => (item=confluent-ce-kafka-http-server) 
+skipping: [upgradenode1] => (item=confluent-kafka-rest) 
+skipping: [upgradenode1] => (item=confluent-server-rest) 
+skipping: [upgradenode1] => (item=confluent-telemetry) 
+skipping: [upgradenode1] => (item=confluent-server) 
+skipping: [upgradenode1] => (item=confluent-security) 
+skipping: [upgradenode1] => (item=confluent-rebalancer) 
+skipping: [upgradenode1] => (item=confluent-control-center-fe) 
+skipping: [upgradenode1] => (item=confluent-control-center) 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Fail if Any Package is Unavailable] **********
+Wednesday 19 August 2026  05:33:35 +0530 (0:00:00.032)       0:43:01.395 ****** 
+skipping: [upgradenode1]
+
+TASK [Stop Service and Remove Packages on Version Change] **********************
+Wednesday 19 August 2026  05:33:36 +0530 (0:00:00.030)       0:43:01.425 ****** 
+
+TASK [confluent.platform.common : Get Package Facts] ***************************
+Wednesday 19 August 2026  05:33:36 +0530 (0:00:00.050)       0:43:01.476 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Determine if Confluent Platform Package Version Will Change] ***
+Wednesday 19 August 2026  05:33:43 +0530 (0:00:06.951)       0:43:08.427 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Get installed Confluent Packages] ************
+Wednesday 19 August 2026  05:33:43 +0530 (0:00:00.023)       0:43:08.451 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Determine Confluent Packages to Remove] ******
+Wednesday 19 August 2026  05:33:43 +0530 (0:00:00.026)       0:43:08.478 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Debug Confluent Packages to Remove] **********
+Wednesday 19 August 2026  05:33:43 +0530 (0:00:00.021)       0:43:08.499 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Get Service Facts] ***************************
+Wednesday 19 August 2026  05:33:43 +0530 (0:00:00.020)       0:43:08.520 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Stop Service before Removing Confluent Packages] ***
+Wednesday 19 August 2026  05:33:49 +0530 (0:00:06.675)       0:43:15.196 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Red Hat] *********
+Wednesday 19 August 2026  05:33:49 +0530 (0:00:00.022)       0:43:15.218 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Remove Confluent Packages - Debian] **********
+Wednesday 19 August 2026  05:33:49 +0530 (0:00:00.019)       0:43:15.238 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Install the Control Center Packages] ***
+Wednesday 19 August 2026  05:33:49 +0530 (0:00:00.020)       0:43:15.259 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Install the Control Center Packages] ***
+Wednesday 19 August 2026  05:36:11 +0530 (0:02:21.270)       0:45:36.529 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Control Center Group] *********
+Wednesday 19 August 2026  05:36:11 +0530 (0:00:00.019)       0:45:36.548 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Check if Control Center User Exists] ***
+Wednesday 19 August 2026  05:36:15 +0530 (0:00:04.562)       0:45:41.111 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Control Center User] **********
+Wednesday 19 August 2026  05:36:20 +0530 (0:00:04.544)       0:45:45.655 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Set Control Center Data Dir permissions] ***
+Wednesday 19 August 2026  05:36:20 +0530 (0:00:00.079)       0:45:45.735 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Set Control Center Data Dir file permissions] ***
+Wednesday 19 August 2026  05:36:25 +0530 (0:00:04.759)       0:45:50.495 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Copy Control Center Service from archive file to system] ***
+Wednesday 19 August 2026  05:36:29 +0530 (0:00:04.810)       0:45:55.305 ****** 
+skipping: [upgradenode1]
+
+TASK [include_role : ssl] ******************************************************
+Wednesday 19 August 2026  05:36:29 +0530 (0:00:00.015)       0:45:55.321 ****** 
+skipping: [upgradenode1]
+
+TASK [Configure Kerberos] ******************************************************
+Wednesday 19 August 2026  05:36:29 +0530 (0:00:00.040)       0:45:55.362 ****** 
+skipping: [upgradenode1]
+
+TASK [Copy Custom Control Center Files] ****************************************
+Wednesday 19 August 2026  05:36:29 +0530 (0:00:00.024)       0:45:55.386 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Configure RBAC] **********************
+Wednesday 19 August 2026  05:36:29 +0530 (0:00:00.019)       0:45:55.406 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Control Center Config directory] ***
+Wednesday 19 August 2026  05:36:30 +0530 (0:00:00.018)       0:45:55.424 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Control Center Config] ********
+Wednesday 19 August 2026  05:36:35 +0530 (0:00:05.073)       0:46:00.498 ****** 
+changed: [upgradenode1]
+
+TASK [Create Control Center Config with Secrets Protection] ********************
+Wednesday 19 August 2026  05:37:03 +0530 (0:00:28.745)       0:46:29.244 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Logs Directory] ***************
+Wednesday 19 August 2026  05:37:03 +0530 (0:00:00.022)       0:46:29.267 ****** 
+changed: [upgradenode1]
+
+TASK [Update log4j Config for Log Cleanup] *************************************
+Wednesday 19 August 2026  05:37:08 +0530 (0:00:04.646)       0:46:33.913 ****** 
+
+TASK [confluent.platform.common : Replace rootLogger] **************************
+Wednesday 19 August 2026  05:37:08 +0530 (0:00:00.073)       0:46:33.986 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Replace loggers] *****************************
+Wednesday 19 August 2026  05:37:13 +0530 (0:00:04.602)       0:46:38.589 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.common : Replace DailyRollingFileAppender with RollingFileAppender] ***
+Wednesday 19 August 2026  05:37:13 +0530 (0:00:00.059)       0:46:38.648 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Remove Key log4j.appender.X.DatePattern] *****
+Wednesday 19 August 2026  05:37:18 +0530 (0:00:04.853)       0:46:43.502 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Register Appenders] **************************
+Wednesday 19 August 2026  05:37:22 +0530 (0:00:04.497)       0:46:47.999 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.common : Add Max Size Properties] *********************
+Wednesday 19 August 2026  05:37:27 +0530 (0:00:04.547)       0:46:52.546 ****** 
+changed: [upgradenode1] => (item=['main', 'Append=true'])
+changed: [upgradenode1] => (item=['main', 'MaxBackupIndex=10'])
+changed: [upgradenode1] => (item=['main', 'MaxFileSize=100MB'])
+changed: [upgradenode1] => (item=['streams', 'Append=true'])
+changed: [upgradenode1] => (item=['streams', 'MaxBackupIndex=10'])
+changed: [upgradenode1] => (item=['streams', 'MaxFileSize=100MB'])
+changed: [upgradenode1] => (item=['kafka', 'Append=true'])
+changed: [upgradenode1] => (item=['kafka', 'MaxBackupIndex=10'])
+changed: [upgradenode1] => (item=['kafka', 'MaxFileSize=100MB'])
+
+TASK [confluent.platform.control_center : Set Permissions on Log4j Conf] *******
+Wednesday 19 August 2026  05:38:10 +0530 (0:00:43.261)       0:47:35.808 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create logredactor rule file directory] ***
+Wednesday 19 August 2026  05:38:14 +0530 (0:00:04.434)       0:47:40.242 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Copy logredactor rule file from control node to component node] ***
+Wednesday 19 August 2026  05:38:14 +0530 (0:00:00.035)       0:47:40.278 ****** 
+skipping: [upgradenode1]
+
+TASK [Configure logredactor] ***************************************************
+Wednesday 19 August 2026  05:38:14 +0530 (0:00:00.037)       0:47:40.315 ****** 
+skipping: [upgradenode1] => (item={'logger_name': 'log4j.rootLogger', 'appenderRefs': 'main'}) 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Restart control center] **************
+Wednesday 19 August 2026  05:38:14 +0530 (0:00:00.056)       0:47:40.372 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create RocksDB Directory] ************
+Wednesday 19 August 2026  05:38:14 +0530 (0:00:00.033)       0:47:40.406 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Set Permission to RocksDB Files] *****
+Wednesday 19 August 2026  05:38:15 +0530 (0:00:00.033)       0:47:40.439 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Basic Auth Jaas File] *********
+Wednesday 19 August 2026  05:38:15 +0530 (0:00:00.062)       0:47:40.501 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Basic Auth Password File] *****
+Wednesday 19 August 2026  05:38:15 +0530 (0:00:00.022)       0:47:40.524 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Create Service Override Directory] ***
+Wednesday 19 August 2026  05:38:15 +0530 (0:00:00.024)       0:47:40.548 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Write Service Overrides] *************
+Wednesday 19 August 2026  05:38:20 +0530 (0:00:05.352)       0:47:45.900 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Certs were Updated - Trigger Restart] ***
+Wednesday 19 August 2026  05:38:49 +0530 (0:00:29.059)       0:48:14.960 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : meta] ********************************
+Wednesday 19 August 2026  05:38:49 +0530 (0:00:00.023)       0:48:14.983 ****** 
+
+RUNNING HANDLER [confluent.platform.control_center : restart control center] ***
+Wednesday 19 August 2026  05:38:49 +0530 (0:00:00.006)       0:48:14.990 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/control_center/tasks/restart_and_wait.yml for upgradenode1
+
+RUNNING HANDLER [confluent.platform.control_center : Restart Control Center] ***
+Wednesday 19 August 2026  05:38:49 +0530 (0:00:00.024)       0:48:15.014 ****** 
+changed: [upgradenode1]
+
+RUNNING HANDLER [confluent.platform.control_center : Startup Delay] ************
+Wednesday 19 August 2026  05:38:54 +0530 (0:00:05.148)       0:48:20.162 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Start Control Center Service] ********
+Wednesday 19 August 2026  05:39:29 +0530 (0:00:34.670)       0:48:54.833 ****** 
+changed: [upgradenode1]
+
+TASK [confluent.platform.control_center : Health Check] ************************
+Wednesday 19 August 2026  05:39:34 +0530 (0:00:05.289)       0:49:00.122 ****** 
+included: /private/tmp/claude-501/-Users-ishikapaliwal-ansible-collections-confluent-platform/85b040d8-855f-4316-b94d-e9bbdcb82090/scratchpad/worktrees/mergebase_root/ansible_collections/confluent/platform/roles/control_center/tasks/health_check.yml for upgradenode1
+
+TASK [confluent.platform.control_center : Wait for webpage to serve content] ***
+Wednesday 19 August 2026  05:39:34 +0530 (0:00:00.043)       0:49:00.166 ****** 
+ok: [upgradenode1]
+
+TASK [confluent.platform.control_center : Fetch Files for Debugging Failure] ***
+Wednesday 19 August 2026  05:39:50 +0530 (0:00:15.598)       0:49:15.764 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Fail Provisioning] *******************
+Wednesday 19 August 2026  05:39:50 +0530 (0:00:00.025)       0:49:15.790 ****** 
+skipping: [upgradenode1]
+
+TASK [confluent.platform.control_center : Delete temporary keys/certs when keystore and trustore is provided] ***
+Wednesday 19 August 2026  05:39:50 +0530 (0:00:00.022)       0:49:15.812 ****** 
+[WARNING]: Could not match supplied host pattern, ignoring:
+control_center_serial
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_connect_replicator_parallel
+[WARNING]: Could not match supplied host pattern, ignoring:
+kafka_connect_replicator_serial
+skipping: [upgradenode1] => (item=/var/ssl/private/ca.crt) 
+skipping: [upgradenode1] => (item=/var/ssl/private/control_center.crt) 
+skipping: [upgradenode1] => (item=/var/ssl/private/control_center.key) 
+skipping: [upgradenode1]
+
+PLAY [Control Center Serial Provisioning] **************************************
+skipping: no hosts matched
+
+PLAY [Kafka Connect Replicator Status Finding] *********************************
+skipping: no hosts matched
+
+PLAY [Kafka Connect Replicator Parallel Provisioning] **************************
+skipping: no hosts matched
+
+PLAY [Kafka Connect Replicator Serial Provisioning] ****************************
+skipping: no hosts matched
+
+PLAY RECAP *********************************************************************
+upgradenode1               : ok=83   changed=26   unreachable=0    failed=0    skipped=92   rescued=0    ignored=0   
+upgradenode2               : ok=60   changed=21   unreachable=0    failed=0    skipped=78   rescued=0    ignored=0   
+upgradenode3               : ok=198  changed=65   unreachable=0    failed=0    skipped=238  rescued=0    ignored=0   
+
+
+TASKS RECAP ********************************************************************
+Wednesday 19 August 2026  05:39:50 +0530 (0:00:00.023)       0:49:15.835 ****** 
+=============================================================================== 
+confluent.platform.kafka_broker : Install the Kafka Broker Packages --- 147.80s
+confluent.platform.control_center : Install the Control Center Packages - 141.27s
+confluent.platform.common : Add Max Size Properties ------------------- 137.75s
+confluent.platform.kafka_connect : Install the Kafka Connect Packages - 105.53s
+confluent.platform.common : Install Java ------------------------------ 104.88s
+confluent.platform.common : Check Package Availability (RedHat) ------- 101.21s
+confluent.platform.common : Check Package Availability (RedHat) -------- 85.15s
+confluent.platform.common : Check Package Availability (RedHat) -------- 81.40s
+confluent.platform.common : Check Package Availability (RedHat) -------- 77.70s
+confluent.platform.common : Check Package Availability (RedHat) -------- 74.32s
+confluent.platform.common : Check Package Availability (RedHat) -------- 68.32s
+confluent.platform.zookeeper : Install the Zookeeper Packages ---------- 60.91s
+confluent.platform.common : Check Package Availability (RedHat) -------- 54.46s
+confluent.platform.common : Add Max Size Properties -------------------- 43.26s
+confluent.platform.kafka_connect : Startup Delay ----------------------- 34.69s
+confluent.platform.control_center : Startup Delay ---------------------- 34.67s
+confluent.platform.schema_registry : Install the Schema Registry Packages -- 34.43s
+confluent.platform.ksql : Install the Ksql Packages -------------------- 33.12s
+confluent.platform.ksql : Create Ksql Config --------------------------- 29.98s
+confluent.platform.zookeeper : Create Zookeeper myid File -------------- 29.87s
+EXIT_CODE_MARKER: 0

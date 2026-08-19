@@ -1,0 +1,1 @@
+confluent.controlcenter.data.dir=/var/lib/confluent/control-center

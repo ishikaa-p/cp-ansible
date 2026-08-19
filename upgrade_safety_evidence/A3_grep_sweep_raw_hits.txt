@@ -1,0 +1,23 @@
+roles/schema_registry/defaults/main.yml:25:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_rest/defaults/main.yml:25:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_rest/tasks/main.yml:189:    path: /var/ssl/private
+roles/control_center/defaults/main.yml:23:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_connect_replicator/tasks/rbac_replicator_producer.yml:4:    path: /var/ssl/private/kafka_connect_replicator_producer
+roles/kafka_connect_replicator/tasks/rbac_replicator_monitoring.yml:4:    path: /var/ssl/private/kafka_connect_replicator_monitoring_interceptor
+roles/kafka_connect_replicator/defaults/main.yml:13:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_controller/tasks/health_check.yml:8:    KAFKA_OPTS: "-Xlog:all=error -XX:+IgnoreUnrecognizedVMOptions {% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_controller/tasks/health_check.yml:21:    KAFKA_OPTS: "-Xlog:all=error -XX:+IgnoreUnrecognizedVMOptions {% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_controller/tasks/rbac.yml:70:    path: /var/ssl/private
+roles/kafka_controller/defaults/main.yml:26:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_controller/tasks/main.yml:215:- name: Set Permissions on /var/lib/controller
+roles/kafka_controller/tasks/main.yml:217:    path: /var/lib/controller/
+roles/zookeeper/defaults/main.yml:25:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/common/tasks/idp_certs.yml:9:    path: /var/ssl/private
+roles/kafka_broker/tasks/rbac.yml:98:    path: /var/ssl/private
+roles/kafka_broker/tasks/main.yml:238:- name: Set Permissions on /var/lib/kafka
+roles/kafka_broker/tasks/main.yml:240:    path: /var/lib/kafka/
+roles/kafka_broker/tasks/health_check.yml:7:    KAFKA_OPTS: "-Xlog:all=error -XX:+IgnoreUnrecognizedVMOptions {% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_broker/tasks/health_check.yml:34:    KAFKA_OPTS: "-Xlog:all=error -XX:+IgnoreUnrecognizedVMOptions {% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_broker/defaults/main.yml:30:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/kafka_connect/defaults/main.yml:25:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
+roles/ksql/defaults/main.yml:25:  - "{% if kerberos_client_config_file_dest != '/etc/krb5.conf' %}-Djava.security.krb5.conf={{kerberos_client_config_file_dest}}{% endif %}"
